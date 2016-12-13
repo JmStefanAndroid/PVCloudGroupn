@@ -21,16 +21,19 @@
             android:text="@string/type_all" />
 
         <TextView
+            android:id="@+id/fun_combo"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_cloud_tc"
             android:text="@string/type_cloud_bondff" />
 
         <TextView
+            android:id="@+id/fun_charge"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_charge"
             android:text="@string/type_phone_charge" />
 
         <TextView
+            android:id="@+id/fun_wolrdgo"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_world_buy"
             android:text="@string/type_cloud_earthgo" />

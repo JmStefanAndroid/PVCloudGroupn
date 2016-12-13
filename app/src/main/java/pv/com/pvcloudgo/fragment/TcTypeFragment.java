@@ -20,7 +20,7 @@ import butterknife.Bind;
 import pv.com.pvcloudgo.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * 套餐分类
  */
 public class TcTypeFragment extends BaseFragment implements OnTabSelectListener {
 
@@ -56,7 +56,7 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
 
     private void initTab() {
         for (String title : mTitles) {
-            mFragments.add(new VipFragment());
+            mFragments.add(new TcListFragment());
         }
 
 

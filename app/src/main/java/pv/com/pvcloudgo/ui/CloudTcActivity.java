@@ -19,9 +19,13 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import pv.com.pvcloudgo.BaseActivity;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.fragment.ShopFragment;
+import pv.com.pvcloudgo.fragment.ComboSelectedFragment;
+import pv.com.pvcloudgo.fragment.TcTypeFragment;
 import pv.com.pvcloudgo.fragment.dummy.TabEntity;
 
+/**
+ * 云套餐
+ */
 public class CloudTcActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
@@ -48,7 +52,7 @@ public class CloudTcActivity extends BaseActivity {
 
     private ArrayList<Fragment> mFragments = new ArrayList<>();
 
-    private String[] mTitles = {"关注", "推荐", "热门"};
+    private String[] mTitles = {"套餐分类", "已选套餐"};
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
@@ -67,9 +71,8 @@ public class CloudTcActivity extends BaseActivity {
 
     private void initTab() {
 
-        for (String title : mTitles) {
-            mFragments.add(new ShopFragment());
-        }
+        mFragments.add(new TcTypeFragment());
+        mFragments.add(new ComboSelectedFragment());
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));

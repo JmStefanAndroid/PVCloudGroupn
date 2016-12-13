@@ -180,6 +180,7 @@
 
         <activity android:name=".CategoryActivity" />
         <activity android:name=".ui.CloudTcActivity"></activity>
+        <activity android:name=".ui.PhoneChargeActivity"></activity>
     </application>
 
 </manifest>

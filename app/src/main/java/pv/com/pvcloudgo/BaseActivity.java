@@ -25,7 +25,7 @@ public class BaseActivity extends AppCompatActivity {
     protected static final String TAG = BaseActivity.class.getSimpleName();
 
     @Inject
-    OkHttpHelper mHttpHelper;
+    public OkHttpHelper mHttpHelper;
 
     Context mContext;
 

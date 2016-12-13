@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import javax.inject.Inject;
 
@@ -22,10 +23,15 @@ public abstract class BaseFragment extends Fragment {
     @Inject
     protected OkHttpHelper mHttpHelper;
 
+    private LinearLayout mRoot;
+
+    LayoutInflater mInflater;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        mInflater=inflater;
+        mRoot = new LinearLayout(getActivity());
+        mRoot.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         View view = createView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, view);
 
@@ -35,9 +41,17 @@ public abstract class BaseFragment extends Fragment {
 
         init();
 
-        return view;
+        mRoot.addView(view);
+        return mRoot;
 
     }
+
+    public void showEmptyView(int viewid){
+        View emptyview=mInflater.inflate(viewid,null);
+        mRoot.getChildAt(0).setVisibility(View.GONE);
+        mRoot.addView(emptyview);
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -12,9 +12,10 @@ import com.nineoldandroids.animation.ObjectAnimator;
 
 import pv.com.pvcloudgo.CategoryActivity;
 import pv.com.pvcloudgo.R;
+import pv.com.pvcloudgo.ui.CloudTcActivity;
+import pv.com.pvcloudgo.ui.PhoneChargeActivity;
 
 public class ViewHolderFunc extends RecyclerView.ViewHolder implements View.OnClickListener {
-
 
 
     public ViewHolderFunc(View itemView) {
@@ -48,7 +49,15 @@ public class ViewHolderFunc extends RecyclerView.ViewHolder implements View.OnCl
                     case R.id.fun_all:
                         v.getContext().startActivity(new Intent(v.getContext(), CategoryActivity.class));
                         break;
+                    case R.id.fun_combo:
+                        v.getContext().startActivity(new Intent(v.getContext(), CloudTcActivity.class));
+                        break;
+                    case R.id.fun_charge:
+                        v.getContext().startActivity(new Intent(v.getContext(), PhoneChargeActivity.class));
+                        break;
+                    case R.id.fun_wolrdgo:
 
+                        break;
 
                 }
 

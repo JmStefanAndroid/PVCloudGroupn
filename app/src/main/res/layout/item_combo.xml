@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/middlePadding"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/largePadding">
+
+        <RelativeLayout
+            android:id="@+id/item_up"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_toLeftOf="@+id/item_atten_tv"
+                android:layout_toRightOf="@+id/list_item_user_avater"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/middlePadding"
+                    android:maxLines="1"
+                    android:text="时光零食店+内搭打底衣"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:maxLines="1"
+                    android:text="¥288.00"
+                    android:textColor="@color/gray"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:maxLines="1"
+                    android:text="赠送积分：8.82V"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:maxLines="1"
+                    android:text="商品来源：湖南湘西"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/smallerPadding"
+                        android:maxLines="1"
+                        android:background="@drawable/shape_rrect_purple_trans"
+                        android:text="大众"
+                        android:textColor="@color/purple"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/smallerPadding"
+                        android:maxLines="1"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/shape_rrect_purple_trans"
+                        android:text="家"
+                        android:textColor="@color/purple"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.facebook.drawee.view.DraweeView
+                android:id="@+id/list_item_user_avater"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:src="@drawable/pg_shoes"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>
