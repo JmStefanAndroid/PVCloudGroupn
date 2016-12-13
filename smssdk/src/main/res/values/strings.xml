@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_contacts_permission">应用无权限读取通讯录</string>
+</resources>

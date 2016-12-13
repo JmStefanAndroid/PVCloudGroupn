@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="smssdk_error_desc_server_busy">服务器繁忙</string>
+	<string name="smssdk_error_desc_400">无效请求</string>
+	<string name="smssdk_error_desc_401">token为空</string>
+	<string name="smssdk_error_desc_402">token不存在</string>
+	<string name="smssdk_error_desc_403">CRC32为空</string>
+	<string name="smssdk_error_desc_404">CRC32非法</string>
+	<string name="smssdk_error_desc_405">AppKey为空</string>
+	<string name="smssdk_error_desc_406">AppKey错误</string>
+	<string name="smssdk_error_desc_407">缺少数据</string>
+	<string name="smssdk_error_desc_408">无效的参数</string>
+	<string name="smssdk_error_desc_418">内部接口调用失败</string>
+	<string name="smssdk_error_desc_419">duid对应的token不存在</string>
+	
+	<string name="smssdk_error_desc_450">权限不足</string>
+	<string name="smssdk_error_desc_451">User-Agent为空</string>
+	<string name="smssdk_error_desc_452">User-Agent格式错误</string>
+	<string name="smssdk_error_desc_453">解密错误</string>
+	<string name="smssdk_error_desc_454">数据格式错误</string>
+	<string name="smssdk_error_desc_455">签名无效</string>
+	<string name="smssdk_error_desc_456">手机号码错误</string>
+	<string name="smssdk_error_desc_457">非法手机号</string>
+	<string name="smssdk_error_desc_458">手机号码在黑名单中</string>
+	<string name="smssdk_error_desc_459">无appKey的控制数据</string>
+	<string name="smssdk_error_desc_460">无权限发送短信</string>
+	<string name="smssdk_error_desc_461">不支持该地区发送短信</string>
+	<string name="smssdk_error_desc_462">每分钟发送次数超限</string>
+	<string name="smssdk_error_desc_463">手机号码每天发送次数超限</string>
+	<string name="smssdk_error_desc_464">每台手机每天发送次数超限</string>
+	<string name="smssdk_error_desc_465">号码在App中每天发送短信的次数超限</string>
+	<string name="smssdk_error_desc_466">校验的验证码为空</string>
+	<string name="smssdk_error_desc_467">校验验证码请求频繁</string>
+	<string name="smssdk_error_desc_468">需要校验的验证码错误</string>
+	<string name="smssdk_error_desc_469">未开启web发送短信</string>
+	<string name="smssdk_error_desc_470">账户余额不足</string>
+	<string name="smssdk_error_desc_471">请求IP错误</string>
+	<string name="smssdk_error_desc_472">获取客户端平台错误</string>
+	<string name="smssdk_error_desc_473">服务端根据duid获取平台错误 </string>
+	<string name="smssdk_error_desc_474">没有打开服务端验证开关</string>
+	<string name="smssdk_error_desc_475">appKey的应用信息不存在</string>
+	
+	<string name="smssdk_error_desc_500">服务器内部错误</string>
+	
+	<string name="smssdk_error_detail_400">客户端请求不能被识别。</string>
+	<string name="smssdk_error_detail_401">请求的token为空。</string>
+	<string name="smssdk_error_detail_402">请求的token不存在。</string>
+	<string name="smssdk_error_detail_403">请求Header中的hash为空。</string>
+	<string name="smssdk_error_detail_404">请求Header中的hash非法。</string>
+	<string name="smssdk_error_detail_405">请求的AppKey为空。</string>
+	<string name="smssdk_error_detail_406">请求的AppKey不存在。</string>
+	<string name="smssdk_error_detail_407">请求提交的数据缺少必要的数据。</string>
+	<string name="smssdk_error_detail_408">无效的请求参数。</string>
+	<string name="smssdk_error_detail_418">内部接口调用失败。</string>
+	<string name="smssdk_error_detail_419">appKey_token对应的duid不存在</string>
+	
+	<string name="smssdk_error_detail_450">无权执行该操作。</string>
+	<string name="smssdk_error_detail_451">所有访问服务器的接口，在请求的头部必须加入指定格式的User-Agent。</string>
+	<string name="smssdk_error_detail_452">请求头中的User-Agent格式错误。</string>
+	<string name="smssdk_error_detail_453">解密请求数据错误。</string>
+	<string name="smssdk_error_detail_454">请求传递的数据格式错误，服务器无法转换为JSON格式的数据。</string>
+	<string name="smssdk_error_detail_455">签名检验。</string>
+	<string name="smssdk_error_detail_456">提交的手机号码或者区号为空。</string>
+	<string name="smssdk_error_detail_457">提交的手机号格式不正确（包括手机的区号）。</string>
+	<string name="smssdk_error_detail_458">手机号码在发送黑名单中。</string>
+	<string name="smssdk_error_detail_459">获取appKey控制发送短信的数据失败。</string>
+	<string name="smssdk_error_detail_460">没有打开客户端发送短信的开关。</string>
+	<string name="smssdk_error_detail_461">没有开通给当前地区发送短信的功能。</string>
+	<string name="smssdk_error_detail_462">每分钟发送短信的数量超过限制。</string>
+	<string name="smssdk_error_detail_463">手机号码每天发送短信的次数超出限制。</string>
+	<string name="smssdk_error_detail_464">每台手机每天发送短信的次数超限。</string>
+	<string name="smssdk_error_detail_465">手机号码在APP中每天发送短信的数量超限。</string>
+	<string name="smssdk_error_detail_466">提交的校验验证码为空。</string>
+	<string name="smssdk_error_detail_467">验证失败3次，验证码失效，请重新请求</string>
+	<string name="smssdk_error_detail_468">用户提交校验的验证码错误。</string>
+	<string name="smssdk_error_detail_469">没有打开通过网页端发送短信的开关。</string>
+	<string name="smssdk_error_detail_470">账户的短信余额不足。</string>
+	<string name="smssdk_error_detail_471">通过服务端发送或验证短信的IP错误</string>
+	<string name="smssdk_error_detail_472">服务端根据duid获取平台错误。</string>
+	<string name="smssdk_error_detail_473">服务端根据duid获取平台错误 </string>
+	<string name="smssdk_error_detail_474">没有打开服务端验证开关</string>
+	<string name="smssdk_error_detail_475">appKey的应用信息不存在</string>
+	
+	<string name="smssdk_error_detail_500">服务端程序报错。</string>
+</resources>

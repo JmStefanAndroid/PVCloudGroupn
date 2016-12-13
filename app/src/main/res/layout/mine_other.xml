@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/middlePadding"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_mine">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:minHeight="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="其他服务"
+            android:textColor="#3c3d3e"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/line_vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_m_share_vquan"
+            android:gravity="center_horizontal"
+            android:text="分享V圈"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_m_add"
+            android:gravity="center_horizontal"
+            android:text="添加商品"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_m_income"
+            android:gravity="center_horizontal"
+            android:text="我的收入"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_m_goods_mana"
+            android:gravity="center_horizontal"
+            android:text="商品管理"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+</LinearLayout>

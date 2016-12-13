@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:padding="@dimen/middlePadding">
+
+
+        <pv.com.pvcloudgo.widget.ClearEditText
+            android:id="@+id/edittxt_phone"
+            style="@style/editText_base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:hint="请输入手机号码/云购账号"
+            android:inputType="phone" />
+
+        <LinearLayout
+            android:id="@+id/ac_find_code_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/now_phone"
+                android:textColor="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="@dimen/smallPadding"
+                android:paddingTop="@dimen/smallPadding">
+
+                <pv.com.pvcloudgo.widget.ClearEditText
+                    android:id="@+id/edittxt_code"
+                    style="@style/editText_base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:hint="请输入短信验证码"
+                    android:inputType="phone" />
+
+                <View
+                    android:background="@color/divider_color"
+                    android:layout_width="1dp"
+                    android:layout_margin="12dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/ac_reg_virifycode_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="获取验证码"
+                    android:textColor="@color/grey" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ac_find_setpswd_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="请设置密码并妥善保管"
+                android:textColor="@color/grey" />
+
+            <pv.com.pvcloudgo.widget.ClearEditText
+                android:id="@+id/edittxt_pswd1"
+                style="@style/editText_base"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="10dp"
+                android:maxLength="12"
+                android:layout_weight="1"
+                android:hint="新密码（6-12个数字、字母和符号组成）"
+                android:inputType="textPassword" />
+
+            <View style="@style/line_vertical" />
+
+            <pv.com.pvcloudgo.widget.ClearEditText
+                android:id="@+id/edittxt_pswd2"
+                style="@style/editText_base"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:maxLength="12"
+                android:hint="请重复输入新密码"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <View style="@style/line_vertical" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/ac_find_pass_next"
+        style="@style/bigGreyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:layout_marginRight="@dimen/largePadding"
+        android:layout_marginTop="40dp"
+        android:text="下一步" />
+
+
+</LinearLayout>

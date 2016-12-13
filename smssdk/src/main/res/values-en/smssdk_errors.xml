@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="smssdk_error_desc_server_busy">Server is busy</string>
+	<string name="smssdk_error_desc_400">Invalid request</string>
+	<string name="smssdk_error_desc_401">Token is empty</string>
+	<string name="smssdk_error_desc_402">Token does not exist</string>
+	<string name="smssdk_error_desc_403">CRC32 is empty</string>
+	<string name="smssdk_error_desc_404">CRC32 is illegal</string>
+	<string name="smssdk_error_desc_405">AppKey is empty</string>
+	<string name="smssdk_error_desc_406">AppKey is incorrect</string>
+	<string name="smssdk_error_desc_407">Argument missing</string>
+	<string name="smssdk_error_desc_408">Invalid parameter</string>
+	<string name="smssdk_error_desc_418">Internal interface failure</string>
+	<string name="smssdk_error_desc_419">DUID not match</string>
+	
+	<string name="smssdk_error_desc_450">Permission denied</string>
+	<string name="smssdk_error_desc_451">User-Agent is empty</string>
+	<string name="smssdk_error_desc_452">Bad Format User-Agent</string>
+	<string name="smssdk_error_desc_453">Decrypt faield</string>
+	<string name="smssdk_error_desc_454">Bad Format data</string>
+	<string name="smssdk_error_desc_455">Invalid signature</string>
+	<string name="smssdk_error_desc_456">Wrong phone number</string>
+	<string name="smssdk_error_desc_457">Phone number is illegal</string>
+	<string name="smssdk_error_desc_458">Blacked phone number</string>
+	<string name="smssdk_error_desc_459">Unable to obtain data</string>
+	<string name="smssdk_error_desc_460">Permission denied</string>
+	<string name="smssdk_error_desc_461">Permission denied</string>
+	<string name="smssdk_error_desc_462">Sending text message hits limit</string>
+	<string name="smssdk_error_desc_463">Sending text message hits limit</string>
+	<string name="smssdk_error_desc_464">Sending text message hits limit</string>
+	<string name="smssdk_error_desc_465">Sending text message hits limit</string>
+	<string name="smssdk_error_desc_466">The verification code is empty</string>
+	<string name="smssdk_error_desc_467">Verification Code becomes invalid,Please request another one</string>
+	<string name="smssdk_error_desc_468">Invalid validation code</string>
+	<string name="smssdk_error_desc_469">Permission denied</string>
+	<string name="smssdk_error_desc_470">Insufficient balance</string>
+	<string name="smssdk_error_desc_471">Invalid IP</string>
+	<string name="smssdk_error_desc_472">Unable to obtain data</string>
+	<string name="smssdk_error_desc_473">Obtaining the platform information error bases on DUID</string>
+	<string name="smssdk_error_desc_474">Server verification option is closed</string>
+	<string name="smssdk_error_desc_475">no application information exists</string>
+	
+	<string name="smssdk_error_desc_500">Internal Server Error</string>
+	
+	<string name="smssdk_error_detail_400">The request could not be identified</string>
+	<string name="smssdk_error_detail_401">The request token is empty</string>
+	<string name="smssdk_error_detail_402">The request token does not exist</string>
+	<string name="smssdk_error_detail_403">The hash code of the request is empty</string>
+	<string name="smssdk_error_detail_404">The hash code of the request is illegal</string>
+	<string name="smssdk_error_detail_405">The request AppKey is empty</string>
+	<string name="smssdk_error_detail_406">The request AppKey does not exist</string>
+	<string name="smssdk_error_detail_407">The required argument missing</string>
+	<string name="smssdk_error_detail_408">There are illegal arguments in the request</string>
+	<string name="smssdk_error_detail_418">An error occurred when calling internal interface</string>
+	<string name="smssdk_error_detail_419">DUID does not match the token</string>
+	
+	<string name="smssdk_error_detail_450">The application attempts to perform an action it does not have permission for</string>
+	<string name="smssdk_error_detail_451">The User-Agent header must be join in the spacified format</string>
+	<string name="smssdk_error_detail_452">The User-Agent in the request header is malformed</string>
+	<string name="smssdk_error_detail_453">Failed to decrypt the request data</string>
+	<string name="smssdk_error_detail_454">The malformed parameters can not be convert to the JSON format</string>
+	<string name="smssdk_error_detail_455">Invalid signature</string>
+	<string name="smssdk_error_detail_456">The submitted phone number or country code is empty</string>
+	<string name="smssdk_error_detail_457">The submitted phone number or country code is incorrect</string>
+	<string name="smssdk_error_detail_458">This phone number had been black</string>
+	<string name="smssdk_error_detail_459">Unable to obtain data related to the appkey</string>
+	<string name="smssdk_error_detail_460">Please turn on the switch to sending text messages by clients</string>
+	<string name="smssdk_error_detail_461">Send text messages to the region is not supported</string>
+	<string name="smssdk_error_detail_462">Sending text message already hit its time limit</string>
+	<string name="smssdk_error_detail_463">Sending text message to the phone number already hit its limit</string>
+	<string name="smssdk_error_detail_464">Sending text message to the device already hit its limit</string>
+	<string name="smssdk_error_detail_465">Sending text message to the device already hit the app\'s limit</string>
+	<string name="smssdk_error_detail_466">The submitted verification code is empty</string>
+	<string name="smssdk_error_detail_467">Check validation code too frequently</string>
+	<string name="smssdk_error_detail_468">Invalid validation code</string>
+	<string name="smssdk_error_detail_469">Please turn on the switch to sending text messages by web</string>
+	<string name="smssdk_error_detail_470">Insufficient balance</string>
+	<string name="smssdk_error_detail_471">The IP address of the verifier server is incorrect</string>
+	<string name="smssdk_error_detail_472">Obtaining client platform information failed</string>
+	<string name="smssdk_error_detail_473">Obtaining the platform information error bases on DUID </string>
+	<string name="smssdk_error_detail_474">Server verification option is closed</string>
+	<string name="smssdk_error_detail_475">no application information exists</string>
+	
+	<string name="smssdk_error_detail_500">Internal Server Error</string>
+</resources>

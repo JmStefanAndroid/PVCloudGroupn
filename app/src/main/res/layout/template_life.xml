@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/middlePadding" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:drawableLeft="@drawable/ic_huilife"
+                android:gravity="center_vertical"
+                android:text="汇生活"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <View
+                style="@style/line_horizontal"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/middlePadding" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="给你最优质的生活"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <View style="@style/line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/largePadding"
+                    android:text="@string/tit_pp_saling"
+                    android:textColor="#808059"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:text="精品超值购"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_talkpop"
+                        android:gravity="center"
+                        android:text="99元\n包邮"
+                        android:textColor="@color/white" />
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        fresco:fadeDuration="300"
+                        fresco:placeholderImage="@android:color/darker_gray"
+                        fresco:viewAspectRatio="1.1" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/largePadding"
+                    android:text="@string/ic_vip_price"
+                    android:textColor="#808059"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:text="特惠降价"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_circle_4"
+                        android:gravity="center"
+                        android:text="99元\n包邮"
+                        android:textColor="@color/white" />
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        fresco:fadeDuration="300"
+                        fresco:placeholderImage="@android:color/darker_gray"
+                        fresco:viewAspectRatio="1.1" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            style="@style/line_vertical"
+            android:layout_marginTop="@dimen/middlePadding" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/largePadding"
+                    android:text="@string/ic_vip_price"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:text="@string/str_chaozhi"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/middlePadding"
+                    fresco:fadeDuration="300"
+                    fresco:placeholderImage="@android:color/darker_gray"
+                    fresco:viewAspectRatio="0.8" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/largePadding"
+                    android:text="@string/tt_new_coming"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:text="@string/str_chaozhi"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/middlePadding"
+                    fresco:fadeDuration="300"
+                    fresco:placeholderImage="@android:color/darker_gray"
+                    fresco:viewAspectRatio="0.8" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/largePadding"
+                    android:text="@string/tt_buynow"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:text="@string/str_chaozhi"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/middlePadding"
+                    fresco:fadeDuration="300"
+                    fresco:placeholderImage="@android:color/darker_gray"
+                    fresco:viewAspectRatio="0.8"
+                    android:id="@+id/simpleDraweeView" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/largePadding"
+                    android:text="秋冬狂欢"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:text="@string/str_chaozhi"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/middlePadding"
+                    fresco:fadeDuration="300"
+                    fresco:placeholderImage="@android:color/darker_gray"
+                    fresco:viewAspectRatio="0.8" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/colorPrimary"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/vip_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.DraweeView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pp_shoes"
+            android:scaleType="centerCrop"
+            app:actualImageScaleType="focusCrop"
+            app:backgroundImage="@drawable/pp_shoes" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_style_shadow"
+            android:drawableStart="@drawable/ic_v_location"
+            android:drawableLeft="@drawable/ic_v_location"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_marginLeft="@dimen/middlePadding"
+            android:text="未来城"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_style_shadow"
+            android:drawableStart="@drawable/ic_v_search"
+            android:drawableLeft="@drawable/ic_v_search"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:paddingRight="8dp"
+            android:layout_alignParentRight="true"
+            android:paddingTop="4dp"
+            android:layout_marginEnd="@dimen/middlePadding"
+            android:layout_marginStart="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/list"
+        android:layout_below="@+id/vip_title"
+        android:name="pv.com.pvcloudgo.fragment.VipFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/smallerPadding"
+        android:layout_marginTop="-44dp"
+        android:layout_marginRight="@dimen/smallerPadding"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="pv.com.pvcloudgo.fragment.VipFragment"
+        tools:listitem="@layout/fragment_vip" />
+
+</RelativeLayout>

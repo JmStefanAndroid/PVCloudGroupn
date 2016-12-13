@@ -1,0 +1,48 @@
+<resources>
+    <string name="smssdk_back">Back </string>
+    <string name="smssdk_regist">Register with phone number</string>
+    <string name="smssdk_make_sure_country_mobile">Please confirm country and input phone number</string>
+    <string name="smssdk_country">Country</string>
+    <string name="smssdk_next">Next</string>
+    <string name="smssdk_make_sure_mobile_num">Confirm phone number</string>
+    <string name="smssdk_cancel">Cancel</string>
+    <string name="smssdk_ok">OK</string>
+    <string name="smssdk_make_sure_mobile_detail"><Data>We will send &lt;font color=#3cac17>verification code&lt;/font> messages to this number:</Data></string>
+    <string name="smssdk_write_mobile_phone">Please input your phone number</string>
+    <string name="smssdk_write_right_mobile_phone">Please input the correct phone number</string>
+    <string name="smssdk_write_identify_code">Please input verification code</string>
+    <string name="smssdk_send_mobile_detail"><Data>We have already sent &lt;font color=#209526>verification code&lt;/font> messages to this number:</Data></string>
+    <string name="smssdk_smart_verify_already">Smart Verification already</string>
+    <string name="smssdk_smart_verify_tips">Credit phone number, no SMS verification:</string>
+    <string name="smssdk_unreceive_identify_code"><Data>&lt;font color=#a8b8cb>Not receiving the verification code?&lt;/font></Data></string>
+    <string name="smssdk_submit">Submit</string>
+    <string name="smssdk_identify_code">Verification code</string>
+    <string name="smssdk_receive_msg"><Data>Receive SMS takes about &lt;font color=#209526>%s&lt;/font> seconds</Data></string>
+    <string name="smssdk_resend_identify_code">Resend verification code</string>
+    <string name="smssdk_choose_country">Choose country</string>
+    <string name="smssdk_network_error">Network error, please try later</string>
+    <string name="smssdk_country_not_support_currently">Country not support, please choose other</string>
+    <string name="smssdk_search">Search</string>
+    <string name="smssdk_search_contact">Search contact</string>
+    <string name="smssdk_virificaition_code_sent">Verification code has been sent</string>
+    <string name="smssdk_virificaition_code_wrong">Verification code error</string>
+    <string name="smssdk_your_ccount_is_verified">Validation successful</string>
+    <string name="smssdk_user_info_submited">User info has been submitted </string>
+    <string name="smssdk_contacts_in_app">Contacts in App</string>
+    <string name="smssdk_contacts_out_app">Contacts out of App</string>
+    <string name="smssdk_invite">Invite</string>
+    <string name="smssdk_send_invitation">Send invitation</string>
+    <string name="smssdk_not_invite"><Data>&lt;font color=#209526> %s &lt;/font></Data>Uninvited</string>
+    <string name="smssdk_contacts_detail">User Detail</string>
+    <string name="smssdk_contacts_phones">Phone: </string>
+    <string name="smssdk_choice_invite_phones">Choose invite phone number</string>
+    <string name="smssdk_invite_content">Your friends invite you to join SMSSDK, download: http://www.mob.com</string>
+    <string name="smssdk_close_identify_page_dialog">Verification code messages may be a slight delay, sure go back and start again?</string>
+    <string name="smssdk_wait">Wait</string>
+    <string name="smssdk_add_contact">Add</string>
+    <string name="smssdk_get_verifycode_frequentlly">Send verification code too frequently, please try later!</string>
+    <string name="smssdk_get_phone_verifycode_today_frequentlly">I am sorry, the phone number for verification code number too much, please try again tomorrow!</string>
+    <string name="smssdk_send_sounds_identify_code">We will call you after your comfirmation. Vocie verification code. Please use message verification code service if you don\'t want to be called.</string>
+    <string name="smssdk_make_sure_send_sounds">Delivery confirmation?</string>
+    <string name="smssdk_send_sounds_success">Voice verification code sent successfully</string>
+</resources>

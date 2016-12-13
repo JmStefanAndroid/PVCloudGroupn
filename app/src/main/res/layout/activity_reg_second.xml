@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="pv.com.pvcloudgo.RegSecondActivity"
+    android:orientation="vertical"
+    android:background="@color/bg_color">
+
+
+
+    <pv.com.pvcloudgo.widget.PVToolBar
+        android:id="@id/toolbar"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:navigationIcon="@drawable/icon_back_32px"
+        app:title="用户注册(2/2)"
+        app:rightButtonText="完 成"
+        />
+
+
+    <TextView
+        android:id="@+id/txtTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/border_color"
+        android:textSize="12sp"
+        android:layout_marginTop="40dp"
+        android:padding="@dimen/largePadding"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="@dimen/largePadding"
+        android:orientation="vertical"
+        android:background="@color/white"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+
+
+            >
+
+        <pv.com.pvcloudgo.widget.ClearEditText
+            android:id="@+id/edittxt_code"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/editText_base"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4"/>
+
+
+        <Button
+            android:id="@+id/btn_reSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/smssdk_resend_identify_code"
+            style="@style/smallGreenButton"
+            android:enabled="false"
+            />
+        </LinearLayout>
+
+        <View
+            style="@style/line_vertical"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

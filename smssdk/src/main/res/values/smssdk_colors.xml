@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="smssdk_dialog_btn_nor">#00000000</drawable>
+    <drawable name="smssdk_dialog_btn_pre">#ff282a2b</drawable>
+    
+	<color name="smssdk_white">#ffffffff</color>
+	<color name="smssdk_gray_press">#fff2f2f2</color>
+	<color name="smssdk_transparent">#00000000</color>
+	<color name="smssdk_lv_tv_color">#ff353535</color>
+	<color name="smssdk_lv_title_color">#ff999999</color>
+	<color name="smssdk_lv_item_selector">#f7fcff</color>
+	<color name="smssdk_lv_item_divider">#ffd9d9da</color>
+	<color name="smssdk_black">#ff000000</color>
+	<color name="smssdk_gray">#ff898989</color>
+</resources>

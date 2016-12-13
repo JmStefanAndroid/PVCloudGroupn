@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+ >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/largePadding">
+
+        <RelativeLayout
+            android:id="@+id/item_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/list_item_user_avater"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/pg_shoes" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_toLeftOf="@+id/item_atten_tv"
+                android:layout_toRightOf="@+id/list_item_user_avater"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:drawablePadding="@dimen/middlePadding"
+                    android:drawableRight="@drawable/already_certified"
+                    android:text="时光零食店"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding"
+                    android:maxLines="1"
+                    android:text="本店出售小零食、各种特色食物。"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_atten_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_rrect_gray_trans"
+                android:drawableLeft="@drawable/ic_heart"
+                android:drawablePadding="@dimen/smallerPadding"
+                android:gravity="center_vertical"
+                android:text="关注"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <com.facebook.drawee.view.DraweeView
+            android:id="@+id/item_ff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_up"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pp_shoes" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_ff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:drawableLeft="@drawable/ic_addr"
+            android:maxLines="1"
+            android:text="陆家嘴西路168号正大广场6楼08铺"
+            android:textColor="@color/darkgray" />
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/middlePadding"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_mine">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:minHeight="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="我的汉香宏云宝"
+            android:textColor="#3c3d3e"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/largePadding"
+            android:drawableRight="@drawable/ic_m_arr_inhan"
+            android:gravity="center_vertical"
+            android:text="进入汉香宏云宝"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <View style="@style/line_vertical" />
+
+    <LinearLayout
+        android:id="@+id/m_t_board_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textColor="@color/black_cus"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/smallerPadding"
+                android:text="可用余额"
+                android:textColor="@color/blackgray_1"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/line_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/largePadding"
+            android:layout_marginTop="@dimen/largePadding" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="36.00"
+                android:textColor="@color/black_cus"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/smallerPadding"
+                android:text="冻结金额"
+                android:textColor="@color/blackgray_1"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/line_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/largePadding"
+            android:layout_marginTop="@dimen/largePadding" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black_cus"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/smallerPadding"
+                android:text="银行卡"
+                android:textColor="@color/blackgray_1"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+            

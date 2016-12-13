@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:id="@+id/parentPanel"
+    android:layout_height="wrap_content"
+    android:background="@color/gainsboro"
+    android:padding="16dp">
+    <!--android:background="@drawable/selector_list_item"-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/darkgrey"
+        android:textSize="20sp"
+
+        />
+
+</LinearLayout>

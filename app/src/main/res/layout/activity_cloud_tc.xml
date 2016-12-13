@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flyco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pv.com.pvcloudgo.ui.CloudTcActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/common_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        flyco:tl_divider_width="32dp"
+        flyco:tl_indicator_bounce_enable="true"
+        flyco:tl_indicator_gradient_colors="@array/slider_colors"
+        flyco:tl_tab_space_equal="true"
+        flyco:tl_textSelectColor="@color/purple"
+        flyco:tl_textUnselectColor="@color/transparent_cus_5f"
+        flyco:tl_textsize="16sp" />
+
+    <View style="@style/line_vertical" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

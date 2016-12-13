@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="slider_colors">
+        <item >@android:color/holo_purple</item>
+        <item >@android:color/holo_purple</item>
+        <item >@android:color/holo_blue_dark</item>
+
+    </integer-array>
+
+</resources>

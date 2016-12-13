@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">PVGo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="home">主页</string>
+    <string name="hot">云会员店</string>
+    <string name="catagory">云商圈</string>
+    <string name="cart">购物车</string>
+    <string name="mine">我的</string>
+    <string name="title_activity_ware_detail">WareDetailActivity</string>
+    <string name="share">分享</string>
+    <string name="my_orders">我的订单</string>
+    <string name="my_favorite">我的收藏</string>
+    <string name="my_info">个人资料</string>
+    <string name="my_addresses">收货地址</string>
+    <string name="my_msg">我的消息</string>
+    <string name="logout">退出登录</string>
+    <string name="to_login">点击登录</string>
+    <string name="token_error">登录失效，请重新登录</string>
+    <string name="title_activity_new_order">NewOrderActivity</string>
+    <string name="title_activity_reg">RegActivity</string>
+    <string name="create_order">填写订单</string>
+    <string name="pay_result">支付结果</string>
+    <string name="add_addresses">新建收件地址</string>
+
+    <string name="now_phone">当前手机号码 %s</string>
+    <string name="type_all">全部分类</string>
+    <string name="type_cloud_bondff">云套餐</string>
+    <string name="type_phone_charge">手机充值</string>
+    <string name="type_cloud_earthgo">云+全球购</string>
+    <string name="type_about_us">关于我们</string>
+    <string name="type_cloud_club">云俱乐部</string>
+    <string name="type_omyomall">OMYO店</string>
+    <string name="type_cloud_servicep">云服务点</string>
+    <string name="tit_pp_saling">品牌特卖</string>
+    <string name="ic_vip_price">专享价</string>
+    <string name="str_chaozhi">精品超值购</string>
+    <string name="tt_new_coming">新品来袭</string>
+    <string name="tt_buynow">超级闪购</string>
+    <string name="tt_168custom">168巅峰定制</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

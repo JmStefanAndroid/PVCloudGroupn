@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" android:id="@+id/toolbar"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:padding="@dimen/middlePadding">
+
+
+        <pv.com.pvcloudgo.widget.ClearEditText
+            android:id="@+id/edittxt_phone"
+            style="@style/editText_base"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:hint="请输入常用手机号码"
+            android:inputType="phone" />
+
+        <View style="@style/line_vertical"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/smallPadding"
+            android:paddingTop="@dimen/smallPadding">
+
+            <pv.com.pvcloudgo.widget.ClearEditText
+                android:id="@+id/edittxt_code"
+                style="@style/editText_base"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:hint="请输入验证码"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/ac_reg_virifycode_tv"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:text="获取验证码"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <View style="@style/line_vertical"
+
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        style="@style/bigPurpleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/btn_complete"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:layout_marginRight="@dimen/largePadding"
+        android:text="完成" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="点击注册，表示你同意《云购用户协议》"
+        android:textColor="@color/border_color"
+        android:textSize="12sp"
+
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/content_container"
+    tools:showIn="@layout/fragment_home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/middlePadding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fun_all"
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_all"
+            android:text="@string/type_all" />
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_cloud_tc"
+            android:text="@string/type_cloud_bondff" />
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_charge"
+            android:text="@string/type_phone_charge" />
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_world_buy"
+            android:text="@string/type_cloud_earthgo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/middlePadding"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_servicep"
+            android:text="@string/type_cloud_servicep" />
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_mall"
+            android:text="@string/type_omyomall" />
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_club"
+            android:text="@string/type_cloud_club" />
+
+        <TextView
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_aboutus"
+            android:text="@string/type_about_us" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/middlePadding"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_mine">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_c_consumen"
+            android:gravity="center_horizontal"
+            android:text="消费粉丝榜"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_c_atten"
+            android:gravity="center_horizontal"
+            android:text="云店关注榜"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_c_consumptions"
+            android:gravity="center_horizontal"
+            android:text="云店消费榜"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_c_thenew"
+            android:gravity="center_horizontal"
+            android:text="新晋红榜"
+            android:textColor="@color/black" />
+        <TextView
+            style="@style/customMineTextBlackGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/middlePadding"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/smallerPadding"
+            android:drawableTop="@drawable/ic_c_region"
+            android:gravity="center_horizontal"
+            android:text="区域消费"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+</LinearLayout>

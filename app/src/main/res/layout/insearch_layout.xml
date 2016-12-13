@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/middlePadding"
+    android:layout_marginRight="@dimen/middlePadding"
+    android:minHeight="?actionBarSize"
+    tools:showIn="@layout/fragment_home">
+
+    <ImageView
+        android:id="@+id/tt_scan_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_scan" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/middlePadding"
+        android:layout_toLeftOf="@+id/tt_msg_iv"
+        android:layout_toRightOf="@+id/tt_scan_iv"
+        android:hint="水果生鲜"
+        android:maxLines="1"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/tt_msg_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_msg" />
+</RelativeLayout>
