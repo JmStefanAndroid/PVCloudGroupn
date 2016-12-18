@@ -190,7 +190,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+if(mSliderLayout!=null)
         mSliderLayout.stopAutoCycle();
     }
 

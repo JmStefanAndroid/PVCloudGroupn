@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:flyco="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="pv.com.pvcloudgo.ui.home.CloudTcActivity">
+    xmlns:flyco="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
 
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <include layout="@layout/title_omyo_layout" />
+    </RelativeLayout>
 
     <com.flyco.tablayout.CommonTabLayout
         android:id="@+id/common_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white"
-        flyco:tl_indicator_width="46dp"
+        flyco:tl_divider_width="32dp"
         flyco:tl_indicator_bounce_enable="true"
         flyco:tl_indicator_gradient_colors="@array/slider_colors"
         flyco:tl_tab_space_equal="true"
@@ -31,4 +33,5 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

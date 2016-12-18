@@ -4,7 +4,8 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="1dp"
+    android:elevation="2dp"
+    android:background="@color/white"
     android:minHeight="?attr/actionBarSize"
     app:layout_scrollFlags="scroll|enterAlways"
     app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
@@ -60,7 +61,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="12dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="14sp" />
 
         <ImageView
@@ -81,5 +82,4 @@
 
 
     </FrameLayout>
-
 </android.support.v7.widget.Toolbar>

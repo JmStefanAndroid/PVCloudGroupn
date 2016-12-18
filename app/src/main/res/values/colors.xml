@@ -358,4 +358,6 @@
     <color name="transparent_cus_1f">#1f000000</color>
     <color name="transparent_cus_2f">#2f000000</color>
 
+    <color name="color_for_cc_tip">#bf808080</color>
+
 </resources>

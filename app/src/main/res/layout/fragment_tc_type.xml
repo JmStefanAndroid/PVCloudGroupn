@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/bg_color"
     android:layout_height="match_parent"
     tools:context="pv.com.pvcloudgo.fragment.TcTypeFragment">
 
@@ -10,6 +11,7 @@
         android:id="@+id/sliding_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/white"
         flyco:tl_indicator_gradient_colors="@array/slider_colors"
         flyco:tl_textSelectColor="@color/purple"
         flyco:tl_textUnselectColor="@color/transparent_cus_5f"

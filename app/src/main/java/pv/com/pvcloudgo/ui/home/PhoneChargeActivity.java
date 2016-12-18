@@ -1,5 +1,7 @@
-package pv.com.pvcloudgo.ui;
+package pv.com.pvcloudgo.ui.home;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -64,8 +66,9 @@ public class PhoneChargeActivity extends BaseActivity {
 
         toolbarTitle.setText("手机充值");
         toolbarRightTitle.setText("充值记录");
+        toolbarRightTitle.setTextColor(Color.BLACK);
         toolbarRightTitle.setVisibility(View.VISIBLE);
-
+        toolbarRightTitle.setOnClickListener(v -> startActivity(new Intent(mContext, PhoneChargeRecordActivity.class)));
     }
 
     @Override

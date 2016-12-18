@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#e7e8ea" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/smallerPadding"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/largePadding">
+
+        <RelativeLayout
+            android:id="@+id/item_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/list_item_user_avater"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/pg_shoes" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_toLeftOf="@+id/item_atten_tv"
+                android:layout_toRightOf="@+id/list_item_user_avater"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/middlePadding"
+                    android:drawableRight="@drawable/already_certified"
+                    android:maxLines="1"
+                    android:text="食尚主义"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/smallerPadding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_sale_light"
+                        android:text="879655" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/middlePadding"
+                        android:drawableLeft="@drawable/ic_location"
+                        android:text="500m" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                style="@style/bigPurpleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="去店逛" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_up"
+            android:orientation="horizontal">
+
+            <pv.com.pvcloudgo.widget.SquareRelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/item_ff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/middlePadding"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pp_shoes" />
+            </pv.com.pvcloudgo.widget.SquareRelativeLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="@dimen/middlePadding"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.DraweeView
+                    android:id="@+id/im1"
+                    android:layout_width="100dp"
+                    android:layout_height="99dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pp_shoes" />
+
+                <com.facebook.drawee.view.DraweeView
+                    android:id="@+id/draweeView"
+                    android:layout_width="100dp"
+                    android:layout_height="99dp"
+                    android:layout_below="@id/im1"
+                    android:layout_marginTop="2dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pp_shoes" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+</LinearLayout>

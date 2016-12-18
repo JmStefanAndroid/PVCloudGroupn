@@ -11,12 +11,12 @@ import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
 import pv.com.pvcloudgo.fragment.interf.OnItemClickListener;
 
-public class ComboRecyclerViewAdapter extends RecyclerView.Adapter<ComboRecyclerViewAdapter.ViewHolder> {
+public class ChargeRecordAdapter extends RecyclerView.Adapter<ChargeRecordAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnItemClickListener mListener;
 
-    public ComboRecyclerViewAdapter(List<DummyItem> items, OnItemClickListener listener) {
+    public ChargeRecordAdapter(List<DummyItem> items, OnItemClickListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -24,7 +24,7 @@ public class ComboRecyclerViewAdapter extends RecyclerView.Adapter<ComboRecycler
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_shop_item, parent, false);
+                .inflate(R.layout.item_p_charge, parent, false);
         return new ViewHolder(view);
     }
 

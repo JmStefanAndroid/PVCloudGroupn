@@ -1,5 +1,6 @@
 package pv.com.pvcloudgo.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.adapter.ShopRecyclerViewAdapter;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
+import pv.com.pvcloudgo.ui.vip.ShopActivity;
 
 import static com.umeng.socialize.utils.DeviceConfig.context;
 
@@ -44,6 +46,12 @@ public class VipFragment extends BaseFragment {
 
     @Override
     public void init() {
+        mListener=new OnListFragmentInteractionListener() {
+            @Override
+            public void onListFragmentInteraction(DummyItem item) {
+                startActivity(new Intent(getActivity(), ShopActivity.class));
+            }
+        };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.setAdapter(new ShopRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {

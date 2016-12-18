@@ -1,49 +1,38 @@
-package pv.com.pvcloudgo.ui;
+package pv.com.pvcloudgo.ui.home;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.View;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.squareup.okhttp.Response;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pv.com.pvcloudgo.BaseActivity;
+import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.fragment.ComboSelectedFragment;
-import pv.com.pvcloudgo.fragment.TcTypeFragment;
+import pv.com.pvcloudgo.app.App;
+import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.fragment.OMYOListFragment;
 import pv.com.pvcloudgo.fragment.dummy.TabEntity;
+import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.msg.LoginRespMsg;
+import pv.com.pvcloudgo.utils.DESUtil;
 
-/**
- * 云套餐
- */
-public class CloudTcActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
-    @Bind(R.id.toolbar_title)
-    TextView toolbarTitle;
-    @Bind(R.id.toolbar_left_logo)
-    ImageView toolbarLeftLogo;
-    @Bind(R.id.toolbar_logo)
-    ImageView toolbarLogo;
-    @Bind(R.id.toolbar_left_title)
-    TextView toolbarLeftTitle;
-    @Bind(R.id.toolbar_right_title)
-    TextView toolbarRightTitle;
-    @Bind(R.id.image_right)
-    ImageView imageRight;
-    @Bind(R.id.image_exit)
-    ImageView imageExit;
+public class OMYOActivity extends BaseActivity {
+
+
     @Bind(R.id.common_tab_layout)
     CommonTabLayout mCommonTabLayout;
     @Bind(R.id.viewpager)
@@ -52,27 +41,23 @@ public class CloudTcActivity extends BaseActivity {
 
     private ArrayList<Fragment> mFragments = new ArrayList<>();
 
-    private String[] mTitles = {"套餐分类", "已选套餐"};
+    private String[] mTitles = {"综合排序", "销量最高","距离最近"};
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cloud_tc);
+        setContentView(R.layout.activity_omyo);
         ButterKnife.bind(this);
 
-
-        initToolBar();
         initTab();
     }
-
     private void initTab() {
 
-        mFragments.add(new TcTypeFragment());
-        mFragments.add(new ComboSelectedFragment());
+        mFragments.add(new OMYOListFragment());
+        mFragments.add(new OMYOListFragment());
+        mFragments.add(new OMYOListFragment());
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
@@ -83,21 +68,6 @@ public class CloudTcActivity extends BaseActivity {
 
     }
 
-    private void initToolBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
-        setupToolbar(toolbar, true);
-
-        toolbarTitle.setText("登录");
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-        finish();
-    }
 
     private void tl_2() {
         mCommonTabLayout.setTabData(mTabEntities);
@@ -153,6 +123,61 @@ public class CloudTcActivity extends BaseActivity {
         public Fragment getItem(int position) {
             return mFragments.get(position);
         }
+    }
+
+
+
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        finish();
+    }
+
+    public void login(View view) {
+
+
+        String phone = null;
+
+        String pwd = null;
+
+
+        Map<String, Object> params = new HashMap<>(2);
+        params.put("phone", phone);
+        params.put("password", DESUtil.encode(Contants.DES_KEY, pwd));
+
+        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
+
+
+            @Override
+            public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
+
+
+                App application = App.getInstance();
+                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
+
+                if (application.getIntent() == null) {
+                    setResult(RESULT_OK);
+                    finish();
+                } else {
+
+                    application.jumpToTargetActivity(mContext);
+                    finish();
+
+                }
+
+
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+
+
     }
 
 }

@@ -39,17 +39,18 @@ public abstract class BaseFragment extends Fragment {
 
         initToolBar();
 
-        init();
-
         mRoot.addView(view);
+
+        init();
         return mRoot;
 
     }
 
     public void showEmptyView(int viewid){
         View emptyview=mInflater.inflate(viewid,null);
+        LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         mRoot.getChildAt(0).setVisibility(View.GONE);
-        mRoot.addView(emptyview);
+        mRoot.addView(emptyview,lp);
     }
 
     @Override

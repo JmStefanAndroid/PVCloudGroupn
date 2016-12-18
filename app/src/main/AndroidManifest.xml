@@ -179,8 +179,16 @@
             android:exported="false" />
 
         <activity android:name=".CategoryActivity" />
-        <activity android:name=".ui.CloudTcActivity"></activity>
-        <activity android:name=".ui.PhoneChargeActivity"></activity>
+        <activity android:name=".ui.home.CloudTcActivity"></activity>
+        <activity android:name=".ui.home.PhoneChargeActivity"></activity>
+        <activity android:name=".ui.home.PhoneChargeRecordActivity"></activity>
+        <activity android:name=".ui.home.CloudWorldGoActivity"></activity>
+        <activity android:name=".ui.home.CloudPointActivity"></activity>
+        <activity android:name=".ui.home.CloudPointApplyActivity"></activity>
+        <activity android:name=".ui.home.OMYOActivity" android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity android:name=".ui.home.CloudClubActivity"></activity>
+        <activity android:name=".ui.home.AboutUsActivity"></activity>
+        <activity android:name=".ui.vip.ShopActivity"></activity>
     </application>
 
 </manifest>

@@ -11,12 +11,15 @@ import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
 import pv.com.pvcloudgo.fragment.interf.OnItemClickListener;
 
-public class ComboRecyclerViewAdapter extends RecyclerView.Adapter<ComboRecyclerViewAdapter.ViewHolder> {
+/**
+ * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
+ */
+public class OMYOListRecyclerViewAdapter extends RecyclerView.Adapter<OMYOListRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnItemClickListener mListener;
 
-    public ComboRecyclerViewAdapter(List<DummyItem> items, OnItemClickListener listener) {
+    public OMYOListRecyclerViewAdapter(List<DummyItem> items, OnItemClickListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -24,7 +27,7 @@ public class ComboRecyclerViewAdapter extends RecyclerView.Adapter<ComboRecycler
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_shop_item, parent, false);
+                .inflate(R.layout.item_omyo_list, parent, false);
         return new ViewHolder(view);
     }
 

@@ -47,21 +47,25 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/fun_cloud_p"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_servicep"
             android:text="@string/type_cloud_servicep" />
 
         <TextView
+            android:id="@+id/fun_omyo"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_mall"
             android:text="@string/type_omyomall" />
 
         <TextView
+            android:id="@+id/fun_cloud_club"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_club"
             android:text="@string/type_cloud_club" />
 
         <TextView
+            android:id="@+id/fun_aboutus"
             style="@style/custom_home_type_text_style"
             android:drawableTop="@drawable/ic_aboutus"
             android:text="@string/type_about_us" />

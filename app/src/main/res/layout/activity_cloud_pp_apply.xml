@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:id="@+id/container"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <pv.com.pvcloudgo.widget.StretchScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="省份"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="请选择" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/xiala" />
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/xiala" />
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="城市"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="请选择" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="地区"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="请选择" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/xiala" />
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="联系人"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="公司名称"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="联系电话"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="办公地址"
+                        android:textSize="15sp" />
+
+                    <View
+                        style="@style/line_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/largePadding"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/largePadding" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_vertical"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="办公场地"
+                    android:textSize="15sp" />
+
+
+                <GridView
+                    android:id="@+id/help_gridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="@dimen/middlePadding"
+                    android:clipToPadding="false"
+                    android:horizontalSpacing="@dimen/space_size"
+                    android:numColumns="4"
+                    android:paddingBottom="?android:attr/actionBarSize"
+                    android:verticalSpacing="@dimen/space_size" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#e7e8ea">
+
+                <Button
+                    style="@style/bigPurpleButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="@dimen/middlePadding"
+                    android:layout_marginLeft="20dp"
+                    android:text="提交申请"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="@dimen/middlePadding" />
+            </RelativeLayout>
+        </LinearLayout>
+    </pv.com.pvcloudgo.widget.StretchScrollView>
+
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="invisible" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_select_check"
+        android:button="@drawable/check_box_selector"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        android:checked="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

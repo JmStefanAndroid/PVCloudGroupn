@@ -27,7 +27,7 @@ public class BaseActivity extends AppCompatActivity {
     @Inject
     public OkHttpHelper mHttpHelper;
 
-    Context mContext;
+    public Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

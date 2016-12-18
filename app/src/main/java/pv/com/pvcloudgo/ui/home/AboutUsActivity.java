@@ -1,4 +1,4 @@
-package pv.com.pvcloudgo;
+package pv.com.pvcloudgo.ui.home;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +12,9 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import pv.com.pvcloudgo.BaseActivity;
+import pv.com.pvcloudgo.Contants;
+import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.SpotsCallBack;
@@ -19,7 +22,7 @@ import pv.com.pvcloudgo.msg.LoginRespMsg;
 import pv.com.pvcloudgo.utils.DESUtil;
 
 
-public class ModelActivity extends BaseActivity {
+public class AboutUsActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -31,7 +34,7 @@ public class ModelActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_layout_model);
+        setContentView(R.layout.activity_about);
         ButterKnife.bind(this);
 
 
@@ -45,7 +48,7 @@ public class ModelActivity extends BaseActivity {
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         setupToolbar(toolbar, true);
 
-        toolbarTitle.setText("登录");
+        toolbarTitle.setText("关于我们");
 
     }
 

@@ -7,7 +7,7 @@
     <include layout="@layout/toolbar" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/largePadding"
         android:orientation="vertical">
@@ -15,6 +15,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:hint="请输入手机号"
             android:text="18328734301"
             android:textColor="@color/black"
             android:textSize="28sp" />

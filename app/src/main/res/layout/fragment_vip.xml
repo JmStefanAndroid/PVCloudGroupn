@@ -28,26 +28,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/item_atten_tv"
                 android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_toLeftOf="@+id/item_atten_tv"
                 android:layout_toRightOf="@+id/list_item_user_avater"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="时光零食店"
-                    android:maxLines="1"
                     android:drawablePadding="@dimen/middlePadding"
                     android:drawableRight="@drawable/already_certified"
+                    android:maxLines="1"
+                    android:text="时光零食店"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:layout_marginTop="@dimen/smallerPadding"
+                    android:maxLines="1"
                     android:text="本店出售小零食、各种特色食物。"
                     android:textColor="@color/gray"
                     android:textSize="13sp" />
@@ -77,15 +77,15 @@
             android:scaleType="centerCrop"
             android:src="@drawable/pp_shoes" />
 
-<TextView
-    android:textColor="@color/darkgray"
-    android:maxLines="1"
-    android:text="陆家嘴西路168号正大广场6楼08铺"
-    android:layout_below="@id/item_ff"
-    android:layout_marginTop="@dimen/middlePadding"
-    android:layout_centerHorizontal="true"
-    android:drawableLeft="@drawable/ic_addr"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_ff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/middlePadding"
+            android:drawableLeft="@drawable/ic_addr"
+            android:maxLines="1"
+            android:text="陆家嘴西路168号正大广场6楼08铺"
+            android:textColor="@color/darkgray" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

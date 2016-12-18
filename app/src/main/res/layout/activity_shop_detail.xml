@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flyco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/shop_goinsearch_layout" />
+
+    <RelativeLayout
+        android:id="@+id/user_avater_container"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/title"
+        android:background="@color/black">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.6"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pg_shoes" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/largePadding"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <com.facebook.drawee.view.DraweeView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginLeft="@dimen/largePadding"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pp_shoes" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/middlePadding"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_v_pp"
+                    android:text="小姑娘的店"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="销量10341 | 收藏92401"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_atten_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/middlePadding"
+                android:layout_marginRight="@dimen/largePadding"
+                android:background="@drawable/shape_rrect_gray_trans"
+                android:drawableLeft="@drawable/ic_heart"
+                android:drawablePadding="@dimen/smallerPadding"
+                android:gravity="center_vertical"
+                android:text="关注"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/common_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/user_avater_container"
+        flyco:tl_divider_width="32dp"
+        flyco:tl_indicator_bounce_enable="true"
+        flyco:tl_indicator_gradient_colors="@array/slider_colors"
+        flyco:tl_tab_space_equal="true"
+        flyco:tl_textSelectColor="@color/purple"
+        flyco:tl_textUnselectColor="@color/transparent_cus_5f"
+        flyco:tl_textsize="16sp" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/line_vertical"
+        android:layout_below="@+id/common_tab_layout" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="店铺信息"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_v_type"
+                android:textSize="16sp"
+                android:drawablePadding="@dimen/smallerPadding"
+                android:layout_centerInParent="true"
+                android:text="店铺分类"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="二维码"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#282b41"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_cloud_club">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/middlePadding"
+        android:layout_marginRight="@dimen/middlePadding"
+        android:layout_marginTop="@dimen/largePadding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V云俱乐部特权"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="查看全部 >"
+            android:textColor="@color/color_for_cc_tip"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/largestPadding"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/largePadding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fun_all"
+            android:textColor="@color/white"
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_mall_owner"
+            android:text="店主特权" />
+
+        <TextView
+            android:id="@+id/fun_costjifen"
+            android:textColor="@color/white"
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/jifen"
+            android:text="消费积分" />
+
+        <TextView
+            android:id="@+id/fun_costincome"
+            android:textColor="@color/white"
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/xiaof"
+            android:text="消费收益" />
+
+        <TextView
+            android:id="@+id/fun_cloudfans"
+            android:textColor="@color/white"
+            style="@style/custom_home_type_text_style"
+            android:drawableTop="@drawable/ic_fans"
+            android:text="云粉丝" />
+
+    </LinearLayout>
+</LinearLayout>

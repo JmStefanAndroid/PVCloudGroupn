@@ -13,17 +13,18 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.adapter.ComboRecyclerViewAdapter;
+import pv.com.pvcloudgo.adapter.OMYOListRecyclerViewAdapter;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent;
+import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
 import pv.com.pvcloudgo.fragment.interf.OnItemClickListener;
 
 import static com.umeng.socialize.utils.DeviceConfig.context;
 
 
 /**
- * 云套餐- 套餐分类 -列表
+ * OMYO seg
  */
-public class TcListFragment extends BaseFragment {
+public class OMYOListFragment extends BaseFragment {
 
     @Bind(R.id.list)
     XRecyclerView mRecyclerView;
@@ -31,12 +32,12 @@ public class TcListFragment extends BaseFragment {
 
     private OnItemClickListener mListener;
 
-    public TcListFragment() {
+    public OMYOListFragment() {
     }
 
     @Override
     public View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tclist, container, false);
+        View view = inflater.inflate(R.layout.fragment_cir_funslist, container, false);
 
         ButterKnife.bind(this, view);
         return view;
@@ -45,9 +46,7 @@ public class TcListFragment extends BaseFragment {
     @Override
     public void init() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-        mRecyclerView.setAdapter(new ComboRecyclerViewAdapter(DummyContent.ITEMS, position -> {
-
-        }));
+        mRecyclerView.setAdapter(new OMYOListRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -89,4 +88,8 @@ public class TcListFragment extends BaseFragment {
         ButterKnife.unbind(this);
     }
 
+    public interface OnListFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onListFragmentInteraction(DummyItem item);
+    }
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_cloudworld_go">
+
+    <pv.com.pvcloudgo.widget.SquareRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.DraweeView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/smallPadding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pp_shoes"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:overlayImage="@drawable/pp_shoes"
+            fresco:placeholderImageScaleType="centerCrop" />
+    </pv.com.pvcloudgo.widget.SquareRelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/smallPadding"
+        android:singleLine="true"
+        android:text="春季新品小清新"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/smallPadding"
+        android:layout_marginTop="@dimen/smallerPadding"
+        android:text="¥300"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/smallPadding"
+        android:layout_marginTop="@dimen/smallerPadding"
+        android:text="赠送积分：8.89V"
+        android:textColor="@color/darkgray"
+        android:textSize="16sp" />
+
+</LinearLayout>

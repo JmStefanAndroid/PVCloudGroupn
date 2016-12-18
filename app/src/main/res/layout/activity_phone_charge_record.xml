@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
     <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/list"
-        android:name="pv.com.pvcloudgo.fragment.ShopFrament"
+        android:id="@+id/ac_p_charge_record_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/smallerPadding"
         android:layout_marginRight="@dimen/smallerPadding"
         app:layoutManager="LinearLayoutManager"
-        tools:context="pv.com.pvcloudgo.fragment.VipFragment"
-        tools:listitem="@layout/item_omyo_list" />
-
+        tools:listitem="@layout/item_p_charge" />
 </LinearLayout>

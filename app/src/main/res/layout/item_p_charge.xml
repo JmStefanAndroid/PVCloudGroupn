@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/middlePadding">
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/largePadding"
+            android:text="¥50"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/largePadding"
+            android:layout_toLeftOf="@+id/price"
+            android:text="50元手机话费-15488823124"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:layout_marginTop="@dimen/smallerPadding"
+        android:text="充值成功"
+        android:textColor="@color/gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:layout_marginTop="@dimen/smallerPadding"
+        android:text="11月01日 9：30"
+        android:textColor="@color/gray" />
+
+    <View
+        style="@style/line_vertical"
+        android:layout_marginTop="@dimen/middlePadding" />
+</LinearLayout>

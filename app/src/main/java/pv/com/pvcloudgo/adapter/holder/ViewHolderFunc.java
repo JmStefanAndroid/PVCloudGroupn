@@ -12,8 +12,13 @@ import com.nineoldandroids.animation.ObjectAnimator;
 
 import pv.com.pvcloudgo.CategoryActivity;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.ui.CloudTcActivity;
-import pv.com.pvcloudgo.ui.PhoneChargeActivity;
+import pv.com.pvcloudgo.ui.home.AboutUsActivity;
+import pv.com.pvcloudgo.ui.home.CloudClubActivity;
+import pv.com.pvcloudgo.ui.home.CloudPointActivity;
+import pv.com.pvcloudgo.ui.home.CloudTcActivity;
+import pv.com.pvcloudgo.ui.home.CloudWorldGoActivity;
+import pv.com.pvcloudgo.ui.home.OMYOActivity;
+import pv.com.pvcloudgo.ui.home.PhoneChargeActivity;
 
 public class ViewHolderFunc extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -56,7 +61,19 @@ public class ViewHolderFunc extends RecyclerView.ViewHolder implements View.OnCl
                         v.getContext().startActivity(new Intent(v.getContext(), PhoneChargeActivity.class));
                         break;
                     case R.id.fun_wolrdgo:
-
+                        v.getContext().startActivity(new Intent(v.getContext(), CloudWorldGoActivity.class));
+                        break;
+                    case R.id.fun_cloud_p:
+                        v.getContext().startActivity(new Intent(v.getContext(), CloudPointActivity.class));
+                        break;
+                    case R.id.fun_omyo:
+                        v.getContext().startActivity(new Intent(v.getContext(), OMYOActivity.class));
+                        break;
+                    case R.id.fun_cloud_club:
+                        v.getContext().startActivity(new Intent(v.getContext(), CloudClubActivity.class));
+                        break;
+                    case R.id.fun_aboutus:
+                        v.getContext().startActivity(new Intent(v.getContext(), AboutUsActivity.class));
                         break;
 
                 }

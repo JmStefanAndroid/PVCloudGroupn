@@ -1,8 +1,10 @@
-package pv.com.pvcloudgo;
+package pv.com.pvcloudgo.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.squareup.okhttp.Response;
@@ -12,6 +14,9 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import pv.com.pvcloudgo.BaseActivity;
+import pv.com.pvcloudgo.Contants;
+import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.SpotsCallBack;
@@ -19,19 +24,21 @@ import pv.com.pvcloudgo.msg.LoginRespMsg;
 import pv.com.pvcloudgo.utils.DESUtil;
 
 
-public class ModelActivity extends BaseActivity {
+public class CloudPointActivity extends BaseActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.toolbar_title)
     TextView toolbarTitle;
+    @Bind(R.id.ac_cpp_apply)
+    Button apply;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_layout_model);
+        setContentView(R.layout.activity_cloud_pp);
         ButterKnife.bind(this);
 
 
@@ -45,8 +52,9 @@ public class ModelActivity extends BaseActivity {
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         setupToolbar(toolbar, true);
 
-        toolbarTitle.setText("登录");
+        toolbarTitle.setText("云服务点");
 
+        apply.setOnClickListener(v -> startActivity(new Intent(mContext,CloudPointApplyActivity.class)));
     }
 
     @Override

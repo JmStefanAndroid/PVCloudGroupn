@@ -37,6 +37,7 @@
     <dimen name="category_layout_width">120dp</dimen>
     <dimen name="title_size">20sp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="space_size">4dp</dimen>
 
 
 </resources>
