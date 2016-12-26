@@ -8,10 +8,18 @@ public class User implements Serializable {
 
 
     private Long id;
-    private  String email;
-    private  String logo_url;
-    private  String username;
-    private  String mobi;
+    private String logo_url;
+    private String username;
+    private String mobi;
+
+    String wxId;
+    String bianhan;
+    String name;
+    String nicheng, password, telPhone, email, touxiang, touxiangMin, qq, weibo, addressTreeIds, selfInfo, status,vo_sex;
+    String zhiye,aihao,jiatingzhuzhi,vo_gradeName,salt,laiyuan;
+    int addressId, sex, age,shopId,vckDataId;//普通-0，商家-！0
+    long zhuceDate;
+
 
     public Long getId() {
         return id;
@@ -51,5 +59,109 @@ public class User implements Serializable {
 
     public void setMobi(String mobi) {
         this.mobi = mobi;
+    }
+
+    public String getWxId() {
+        return wxId;
+    }
+
+    public String getBianhan() {
+        return bianhan;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getNicheng() {
+        return nicheng;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getTelPhone() {
+        return telPhone;
+    }
+
+    public String getTouxiang() {
+        return touxiang;
+    }
+
+    public String getTouxiangMin() {
+        return touxiangMin;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public String getWeibo() {
+        return weibo;
+    }
+
+    public String getAddressTreeIds() {
+        return addressTreeIds;
+    }
+
+    public String getSelfInfo() {
+        return selfInfo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getVo_sex() {
+        return vo_sex;
+    }
+
+    public String getZhiye() {
+        return zhiye;
+    }
+
+    public String getAihao() {
+        return aihao;
+    }
+
+    public String getJiatingzhuzhi() {
+        return jiatingzhuzhi;
+    }
+
+    public String getVo_gradeName() {
+        return vo_gradeName;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public String getLaiyuan() {
+        return laiyuan;
+    }
+
+    public int getAddressId() {
+        return addressId;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getShopId() {
+        return shopId;
+    }
+
+    public int getVckDataId() {
+        return vckDataId;
+    }
+
+    public long getZhuceDate() {
+        return zhuceDate;
     }
 }

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <View
+        style="@style/line_vertical"
+        android:background="@color/title_divider_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_weight="1"
+                android:text="个人信息设置"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/middlePadding"
+                android:src="@drawable/ic_arr_right_1" />
+        </LinearLayout>
+
+        <View style="@style/line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_weight="1"
+                android:text="账户安全"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/middlePadding"
+                android:src="@drawable/ic_arr_right_1" />
+        </LinearLayout>
+
+        <View style="@style/line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_weight="1"
+                android:text="清除缓存"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/middlePadding"
+                android:src="@drawable/ic_arr_right_1" />
+        </LinearLayout>
+
+        <View style="@style/line_vertical" />
+
+        <LinearLayout
+            android:id="@+id/person_ll"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_weight="1"
+                android:text="关于云购"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/middlePadding"
+                android:src="@drawable/ic_arr_right_1" />
+        </LinearLayout>
+
+        <View style="@style/line_vertical" />
+    </LinearLayout>
+
+    <Button
+        style="@style/bigPurpleButton"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:layout_marginRight="@dimen/largePadding"
+        android:layout_marginTop="@dimen/largestPadding"
+        android:text="退出当前账号" />
+</LinearLayout>

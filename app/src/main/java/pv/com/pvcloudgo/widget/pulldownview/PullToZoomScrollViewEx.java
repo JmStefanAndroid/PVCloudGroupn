@@ -48,7 +48,6 @@ public class PullToZoomScrollViewEx extends PullToZoomBase<ScrollView> {
 
     public PullToZoomScrollViewEx(Context context, AttributeSet attrs) {
         super(context, attrs);
-        if(!isInEditMode())return;
         mScalingRunnable = new ScalingRunnable();
         ((InternalScrollView) mRootView).setOnScrollViewChangedListener(new OnScrollViewChangedListener() {
             @Override

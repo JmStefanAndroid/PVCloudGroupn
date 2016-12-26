@@ -11,7 +11,8 @@ public class BaseRespMsg implements Serializable {
     public final static String MSG_SUCCESS="success";
 
     protected  int status=STATUS_SUCCESS;
-    protected  String message;
+    protected  String errorMessage;
+
 
 
     public int getStatus() {
@@ -23,10 +24,10 @@ public class BaseRespMsg implements Serializable {
     }
 
     public String getMessage() {
-        return message;
+        return errorMessage;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.errorMessage = message;
     }
 }

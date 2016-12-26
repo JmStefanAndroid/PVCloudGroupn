@@ -8,6 +8,7 @@
     tools:showIn="@layout/fragment_mine">
 
     <TextView
+        android:id="@+id/mine_fun_all_order"
         style="@style/customMineTextBlackGray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +22,7 @@
         android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/mine_fun_wait_pay"
         style="@style/customMineTextBlackGray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +36,7 @@
         android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/mine_fun_wait_receive"
         style="@style/customMineTextBlackGray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,6 +50,7 @@
         android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/mine_fun_payback"
         style="@style/customMineTextBlackGray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,6 +64,7 @@
         android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/mine_fun_evaluate"
         style="@style/customMineTextBlackGray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

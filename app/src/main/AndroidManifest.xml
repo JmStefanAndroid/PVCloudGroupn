@@ -189,6 +189,7 @@
         <activity android:name=".ui.home.CloudClubActivity"></activity>
         <activity android:name=".ui.home.AboutUsActivity"></activity>
         <activity android:name=".ui.vip.ShopActivity"></activity>
+        <activity android:name=".ui.mine.SettingActivity"></activity>
     </application>
 
 </manifest>

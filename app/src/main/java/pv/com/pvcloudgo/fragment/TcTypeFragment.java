@@ -62,7 +62,7 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
 
         mAdapter = new MyPagerAdapter(getChildFragmentManager());
         mViewPager.setAdapter(mAdapter);
-        slidingTabLayout.setViewPager(mViewPager, mTitles, getActivity(), mFragments);
+        slidingTabLayout.setViewPager(mViewPager);
 //        /** 默认 */
 //        SlidingTabLayout tabLayout_1 = ViewFindUtils.find(decorView, R.id.tl_1);
 //        /**自定义部分属性*/

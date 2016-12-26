@@ -7,13 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.LoginActivity;
 import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.ui.mine.OrderActivity;
 import pv.com.pvcloudgo.widget.pulldownview.PullToZoomScrollViewEx;
 
 
@@ -21,6 +25,20 @@ public class MineFragment extends BaseFragment {
 
     @Bind(R.id.pull_scroll)
     PullToZoomScrollViewEx pullScrollView;
+    @Bind(R.id.mine_fun_all_order)
+    TextView mineFunAllOrder;
+    @Bind(R.id.mine_fun_wait_pay)
+    TextView mineFunWaitPay;
+    @Bind(R.id.mine_fun_wait_receive)
+    TextView mineFunWaitReceive;
+    @Bind(R.id.mine_fun_payback)
+    TextView mineFunPayback;
+    @Bind(R.id.mine_fun_evaluate)
+    TextView mineFunEvaluate;
+    @Bind(R.id.m_t_board_bottom)
+    LinearLayout mTBoardBottom;
+    @Bind(R.id.content_container)
+    LinearLayout contentContainer;
 
 
     @Override
@@ -50,7 +68,7 @@ public class MineFragment extends BaseFragment {
         pullScrollView.setHeaderView(headView);
         pullScrollView.setZoomView(zoomView);
         pullScrollView.setScrollContentView(contentView);
-        pullScrollView.setParallax(false);
+        pullScrollView.setParallax(true);
 //        pullScrollView.setOnTurnListener(new PullScrollView.OnTurnListener() {
 //            @Override
 //            public void onTurn() {
@@ -58,6 +76,23 @@ public class MineFragment extends BaseFragment {
 //            }
 //        });
 //        pullScrollView.init(poster);
+        bindListener();
+    }
+
+    private void bindListener() {
+    }
+
+    @OnClick({R.id.mine_fun_all_order, R.id.mine_fun_evaluate, R.id.mine_fun_payback, R.id.mine_fun_wait_pay, R.id.mine_fun_wait_receive})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.mine_fun_all_order:
+            case R.id.mine_fun_evaluate:
+            case R.id.mine_fun_payback:
+            case R.id.mine_fun_wait_pay:
+            case R.id.mine_fun_wait_receive:
+                startActivity(new Intent(getActivity(), OrderActivity.class));
+                break;
+        }
     }
 
 
@@ -81,7 +116,7 @@ public class MineFragment extends BaseFragment {
     }
 
 
-//    @OnClick({R.id.img_head, R.id.txt_username})
+    @OnClick({R.id.img_head, R.id.txt_username})
     public void toLoginActivity(View view) {
 
 
@@ -92,5 +127,17 @@ public class MineFragment extends BaseFragment {
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
 }

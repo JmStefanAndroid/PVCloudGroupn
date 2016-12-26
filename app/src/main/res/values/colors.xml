@@ -301,6 +301,7 @@
 
     <color name="bg_color">#f1f2f2</color>
     <color name="divider_color">#d4d5d6</color>
+    <color name="title_divider_color">#d7d8d9</color>
     <color name="black">#000</color>
     <color name="black_cus">#515152</color>
     <color name="blackgray">#3d3e3f</color>

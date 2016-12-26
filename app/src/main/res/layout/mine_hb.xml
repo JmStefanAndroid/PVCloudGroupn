@@ -3,10 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/middlePadding"
     android:background="@color/white"
     android:orientation="vertical"
     tools:showIn="@layout/fragment_mine">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/middlePadding"
+        android:background="@color/colorPrimary" />
 
     <RelativeLayout
         android:layout_width="match_parent"

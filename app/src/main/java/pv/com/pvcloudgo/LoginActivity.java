@@ -20,8 +20,7 @@ import butterknife.OnClick;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.SpotsCallBack;
-import pv.com.pvcloudgo.msg.LoginRespMsg;
-import pv.com.pvcloudgo.utils.DESUtil;
+import pv.com.pvcloudgo.msg.LoginResp;
 import pv.com.pvcloudgo.utils.ToastUtils;
 import pv.com.pvcloudgo.widget.ClearEditText;
 
@@ -52,7 +51,6 @@ public class LoginActivity extends BaseActivity {
     TextView findPassTv;
     @Bind(R.id.btn_login)
     Button btnLogin;
-
 
 
     @Override
@@ -113,18 +111,18 @@ public class LoginActivity extends BaseActivity {
 
 
         Map<String, Object> params = new HashMap<>(2);
-        params.put("phone", phone);
-        params.put("password", DESUtil.encode(Contants.DES_KEY, pwd));
+        params.put("name", phone);
+        params.put("password", pwd);
 
-        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
+        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginResp<User>>(this) {
 
 
             @Override
-            public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
+            public void onSuccess(Response response, LoginResp<User> userLoginRespMsg) {
 
 
                 App application = App.getInstance();
-                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
+                application.putUser(userLoginRespMsg.getResults().getMyUser(), userLoginRespMsg.getResults().getToken());
 
                 if (application.getIntent() == null) {
                     setResult(RESULT_OK);
