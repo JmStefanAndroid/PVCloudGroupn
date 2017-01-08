@@ -10,7 +10,7 @@ import java.util.List;
 import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.fragment.ShopFragment;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
-import pv.com.pvcloudgo.fragment.mine.OrderFragment;
+import pv.com.pvcloudgo.fragment.interf.OnItemClickListener;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
@@ -20,9 +20,9 @@ import pv.com.pvcloudgo.fragment.mine.OrderFragment;
 public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
-    private final OrderFragment.OnListFragmentInteractionListener mListener;
+    private final OnItemClickListener mListener;
 
-    public OrderRecyclerViewAdapter(List<DummyItem> items, OrderFragment.OnListFragmentInteractionListener listener) {
+    public OrderRecyclerViewAdapter(List<DummyItem> items, OnItemClickListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -44,7 +44,7 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onItemClick(holder.getAdapterPosition());
                 }
             }
         });

@@ -6,20 +6,19 @@ import java.io.Serializable;
 
 public class BaseRespMsg implements Serializable {
 
-    public final static int STATUS_SUCCESS=1;
-    public final static int STATUS_ERROR=0;
-    public final static String MSG_SUCCESS="success";
+    public final static String STATUS_SUCCESS = "ok";
+    public final static String STATUS_ERROR = "error";
+    public final static String MSG_SUCCESS = "success";
 
-    protected  int status=STATUS_SUCCESS;
-    protected  String errorMessage;
+    protected String status = STATUS_SUCCESS;
+    protected String errorMessage;
 
 
-
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

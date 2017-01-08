@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,8 +21,9 @@ import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.msg.BaseRespMsg;
 import pv.com.pvcloudgo.msg.LoginRespMsg;
-import pv.com.pvcloudgo.utils.DESUtil;
+import pv.com.pvcloudgo.utils.ToastUtils;
 
 
 public class SettingActivity extends BaseActivity {
@@ -32,6 +34,8 @@ public class SettingActivity extends BaseActivity {
     TextView toolbarTitle;
     @Bind(R.id.person_ll)
     LinearLayout personLl;
+    @Bind(R.id.logout_btn)
+    Button logoutBtn;
 
 
     @Override
@@ -43,8 +47,10 @@ public class SettingActivity extends BaseActivity {
 
         initToolBar();
 
-        personLl.setOnClickListener(v -> startActivity(new Intent(mContext,PersonalInfoActivity.class)));
+        personLl.setOnClickListener(v -> startActivity(new Intent(mContext, PersonalInfoActivity.class)));
+        logoutBtn.setOnClickListener(v -> logout(v));
     }
+
 
 
     private void initToolBar() {
@@ -63,48 +69,43 @@ public class SettingActivity extends BaseActivity {
         finish();
     }
 
-    public void login(View view) {
-
-
-        String phone = null;
-
-        String pwd = null;
+    public void logout(View view) {
 
 
         Map<String, Object> params = new HashMap<>(2);
-        params.put("phone", phone);
-        params.put("password", DESUtil.encode(Contants.DES_KEY, pwd));
+        params.put("token", App.getInstance().getToken());
 
-        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
+        mHttpHelper.post(Contants.API.LOGOUT, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
 
 
             @Override
             public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
-
-
-                App application = App.getInstance();
-                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
-
-                if (application.getIntent() == null) {
-                    setResult(RESULT_OK);
+                if (userLoginRespMsg != null && userLoginRespMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
+                    App application = App.getInstance();
+                    application.clearUser();
                     finish();
-                } else {
-
-                    application.jumpToTargetActivity(mContext);
-                    finish();
+                    System.exit(0);
+                    ToastUtils.show("注销成功！");
+                }else{
+                    ToastUtils.show("注销失败！");
+                }
 
                 }
 
+                @Override
+                public void onError (Response response,int code, Exception e){
 
+                }
+
+                @Override
+                public void onServerError (Response response,int code, String errmsg){
+
+                }
             }
 
-            @Override
-            public void onError(Response response, int code, Exception e) {
+            );
 
-            }
-        });
 
+        }
 
     }
-
-}

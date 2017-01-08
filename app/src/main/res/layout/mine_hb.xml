@@ -57,6 +57,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mine_hb_availablemoney_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
@@ -89,6 +90,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mine_hb_frozenmoney_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="36.00"
@@ -121,6 +123,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mine_hb_bankno_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"

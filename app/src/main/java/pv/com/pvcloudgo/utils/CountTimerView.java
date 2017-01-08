@@ -7,11 +7,6 @@ import pv.com.pvcloudgo.R;
 
 /**
  *
- * Autor： <a href="http://www.cniao5.com">菜鸟窝</a>
- * Description：
- * <p/>
- * 菜鸟窝是一个只专注做Android开发技能的在线学习平台，课程以实战项目为主，
- * 对课程与服务”吹毛求疵”般的要求，打造极致课程，是菜鸟窝不变的承诺
  */
 public class CountTimerView extends CountDownTimer {
 
@@ -46,7 +41,7 @@ public class CountTimerView extends CountDownTimer {
     public CountTimerView(TextView btn) {
         super(TIME_COUNT, 1000);
         this.btn = btn;
-        this.endStrRid = R.string.smssdk_resend_identify_code;
+        this.endStrRid = R.string.resend_identify_code;
     }
 
 

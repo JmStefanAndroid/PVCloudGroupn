@@ -1,5 +1,6 @@
 package pv.com.pvcloudgo.fragment.mine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,11 +13,12 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import pv.com.pvcloudgo.ui.mine.OrderDetailActivity;
 import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.adapter.OrderRecyclerViewAdapter;
 import pv.com.pvcloudgo.fragment.BaseFragment;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent;
-import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
+import pv.com.pvcloudgo.fragment.interf.OnItemClickListener;
 
 import static com.umeng.socialize.utils.DeviceConfig.context;
 
@@ -30,7 +32,7 @@ public class OrderFragment extends BaseFragment {
     XRecyclerView mRecyclerView;
     // TODO: Customize parameters
 
-    private OnListFragmentInteractionListener mListener;
+    private OnItemClickListener mListener;
 
     public OrderFragment() {
     }
@@ -45,6 +47,12 @@ public class OrderFragment extends BaseFragment {
 
     @Override
     public void init() {
+        mListener = new OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                startActivity(new Intent(getActivity(), OrderDetailActivity.class), true);
+            }
+        };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mRecyclerView.setAdapter(new OrderRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
@@ -56,7 +64,7 @@ public class OrderFragment extends BaseFragment {
                     public void run() {
                         mRecyclerView.refreshComplete();
                     }
-                },3000);
+                }, 3000);
             }
 
             @Override
@@ -67,12 +75,11 @@ public class OrderFragment extends BaseFragment {
                     public void run() {
                         mRecyclerView.loadMoreComplete();
                     }
-                },3000);
+                }, 3000);
             }
         });
         mRecyclerView.setRefreshProgressStyle(ProgressStyle.BallBeat);
         mRecyclerView.setLoadingMoreProgressStyle(ProgressStyle.BallPulseSync);
-
     }
 
 
@@ -88,8 +95,4 @@ public class OrderFragment extends BaseFragment {
         ButterKnife.unbind(this);
     }
 
-    public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
-    }
 }

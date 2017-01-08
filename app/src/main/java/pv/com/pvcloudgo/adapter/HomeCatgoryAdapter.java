@@ -89,8 +89,8 @@ public class HomeCatgoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public int getItemCount() {
 
 
-        if (mDatas == null || mDatas.size() <= 0)
-            return 0;
+//        if (mDatas == null || mDatas.size() <= 0)
+//            return 0;
 
         return 4;
     }

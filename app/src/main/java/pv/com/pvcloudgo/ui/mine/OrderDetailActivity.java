@@ -1,7 +1,9 @@
-package pv.com.pvcloudgo;
+package pv.com.pvcloudgo.ui.mine;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import pv.com.pvcloudgo.R;
 
 public class OrderDetailActivity extends Activity {
 

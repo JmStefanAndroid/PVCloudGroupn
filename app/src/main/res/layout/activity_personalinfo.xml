@@ -80,6 +80,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_nickname_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
@@ -110,6 +111,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_phone_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
@@ -150,6 +152,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_sex_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
@@ -180,6 +183,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_birth_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
@@ -210,10 +214,11 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_work_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
-                        android:text="853412451@qq.com" />
+                       />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -250,10 +255,11 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_homeland_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
-                        android:text="男" />
+                        />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -280,10 +286,11 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_home_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
-                        android:text="1987-06-17" />
+                        />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -320,10 +327,11 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/user_personid_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/middlePadding"
-                        android:text="男" />
+                        android:text="待申请" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -335,6 +343,7 @@
                 <View style="@style/line_vertical" />
 
                 <LinearLayout
+                    android:id="@+id/receip_ll"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:gravity="center_vertical"
@@ -349,11 +358,6 @@
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/middlePadding"
-                        android:text="1987-06-17" />
 
                     <ImageView
                         android:layout_width="wrap_content"

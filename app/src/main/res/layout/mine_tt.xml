@@ -111,6 +111,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mine_atten_shop_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
@@ -137,6 +138,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mine_fansno_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="36"
@@ -163,6 +165,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mine_quan_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"

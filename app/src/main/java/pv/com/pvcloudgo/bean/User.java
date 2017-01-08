@@ -15,10 +15,10 @@ public class User implements Serializable {
     String wxId;
     String bianhan;
     String name;
-    String nicheng, password, telPhone, email, touxiang, touxiangMin, qq, weibo, addressTreeIds, selfInfo, status,vo_sex;
-    String zhiye,aihao,jiatingzhuzhi,vo_gradeName,salt,laiyuan;
-    int addressId, sex, age,shopId,vckDataId;//普通-0，商家-！0
-    long zhuceDate;
+    String nicheng, password, telPhone, email, touxiang, touxiangMin, qq, weibo, addressTreeIds, selfInfo, status, vo_sex;
+    String zhiye, aihao, jiatingzhuzhi, vo_gradeName, salt, laiyuan;
+    int addressId, sex, age, shopId, vckDataId;//普通-0，商家-！0
+    String zhuceDate;
 
 
     public Long getId() {
@@ -161,7 +161,44 @@ public class User implements Serializable {
         return vckDataId;
     }
 
-    public long getZhuceDate() {
+    public String getZhuceDate() {
         return zhuceDate;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", logo_url='" + logo_url + '\'' +
+                ", username='" + username + '\'' +
+                ", mobi='" + mobi + '\'' +
+                ", wxId='" + wxId + '\'' +
+                ", bianhan='" + bianhan + '\'' +
+                ", name='" + name + '\'' +
+                ", nicheng='" + nicheng + '\'' +
+                ", password='" + password + '\'' +
+                ", telPhone='" + telPhone + '\'' +
+                ", email='" + email + '\'' +
+                ", touxiang='" + touxiang + '\'' +
+                ", touxiangMin='" + touxiangMin + '\'' +
+                ", qq='" + qq + '\'' +
+                ", weibo='" + weibo + '\'' +
+                ", addressTreeIds='" + addressTreeIds + '\'' +
+                ", selfInfo='" + selfInfo + '\'' +
+                ", status='" + status + '\'' +
+                ", vo_sex='" + vo_sex + '\'' +
+                ", zhiye='" + zhiye + '\'' +
+                ", aihao='" + aihao + '\'' +
+                ", jiatingzhuzhi='" + jiatingzhuzhi + '\'' +
+                ", vo_gradeName='" + vo_gradeName + '\'' +
+                ", salt='" + salt + '\'' +
+                ", laiyuan='" + laiyuan + '\'' +
+                ", addressId=" + addressId +
+                ", sex=" + sex +
+                ", age=" + age +
+                ", shopId=" + shopId +
+                ", vckDataId=" + vckDataId +
+                ", zhuceDate='" + zhuceDate + '\'' +
+                '}';
     }
 }

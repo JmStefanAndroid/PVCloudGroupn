@@ -21,6 +21,7 @@ import pv.com.pvcloudgo.adapter.decoration.CardViewtemDecortion;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.Order;
 import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.ui.mine.OrderDetailActivity;
 import pv.com.pvcloudgo.widget.PVToolBar;
 
 public class MyOrderActivity extends BaseActivity implements TabLayout.OnTabSelectedListener {
@@ -132,6 +133,11 @@ public class MyOrderActivity extends BaseActivity implements TabLayout.OnTabSele
 
             @Override
             public void onError(Response response, int code, Exception e) {
+
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
 
             }
         });

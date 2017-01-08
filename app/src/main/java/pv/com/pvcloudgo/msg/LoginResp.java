@@ -2,7 +2,9 @@
 package pv.com.pvcloudgo.msg;
 
 
-public class LoginResp<T> extends BaseRespMsg {
+import pv.com.pvcloudgo.bean.User;
+
+public class LoginResp extends BaseRespMsg {
 
     Result results;
 
@@ -12,11 +14,11 @@ public class LoginResp<T> extends BaseRespMsg {
     }
 
 
-  public  class Result {
-        T myUser;
+    public class Result {
+        User myUser;
         String token;
 
-        public T getMyUser() {
+        public User getMyUser() {
             return myUser;
         }
 

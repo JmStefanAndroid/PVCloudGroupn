@@ -5,8 +5,8 @@
         <shape android:shape="rectangle">
             <corners android:radius="26dp" />
             <corners android:radius="@dimen/buttonCornerSize" />
-            <solid android:color="@color/blueviolet" />
-            <stroke android:width="1.0px" android:color="@color/blueviolet" />
+            <solid android:color="#bebfc1" />
+            <stroke android:width="1.0px" android:color="#bebfc1" />
         </shape>
     </item>
     <item android:state_pressed="true">

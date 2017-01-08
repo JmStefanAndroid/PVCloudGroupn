@@ -60,7 +60,6 @@ repositories {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':sharesdk')
-    compile project(':smssdk')
     // Java标注
 
     // dagger 2 的配置

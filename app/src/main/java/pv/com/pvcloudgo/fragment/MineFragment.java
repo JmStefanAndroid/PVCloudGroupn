@@ -9,35 +9,46 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.squareup.okhttp.Response;
+
+import java.util.HashMap;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import pv.com.pvcloudgo.Contants;
-import pv.com.pvcloudgo.LoginActivity;
 import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.app.App;
+import pv.com.pvcloudgo.bean.Param;
 import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.msg.BaseRespMsg;
+import pv.com.pvcloudgo.msg.MineMsg;
 import pv.com.pvcloudgo.ui.mine.OrderActivity;
+import pv.com.pvcloudgo.ui.mine.SettingActivity;
+import pv.com.pvcloudgo.utils.ToastUtils;
+import pv.com.pvcloudgo.utils.Utils;
 import pv.com.pvcloudgo.widget.pulldownview.PullToZoomScrollViewEx;
 
 
-public class MineFragment extends BaseFragment {
+public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Bind(R.id.pull_scroll)
     PullToZoomScrollViewEx pullScrollView;
-    @Bind(R.id.mine_fun_all_order)
     TextView mineFunAllOrder;
-    @Bind(R.id.mine_fun_wait_pay)
     TextView mineFunWaitPay;
-    @Bind(R.id.mine_fun_wait_receive)
     TextView mineFunWaitReceive;
-    @Bind(R.id.mine_fun_payback)
     TextView mineFunPayback;
-    @Bind(R.id.mine_fun_evaluate)
     TextView mineFunEvaluate;
-    @Bind(R.id.m_t_board_bottom)
+    TextView mTxtUserName;
+    TextView attenCountTv;
+    TextView fansTv;
+    TextView salecardTv;
+    TextView bankNoTv;
+    TextView frozenMoneyTv;
+    TextView availableMoneyTv;
+    CircleImageView imgHead;
     LinearLayout mTBoardBottom;
-    @Bind(R.id.content_container)
     LinearLayout contentContainer;
 
 
@@ -46,16 +57,16 @@ public class MineFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_mine, container, false);
     }
 
+
     @Override
     public void init() {
 
-        showUser();
+
 //        scrollView.getPullRootView().findViewById(R.id.tv_test1).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //            }
 //        });
-
         DisplayMetrics localDisplayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(localDisplayMetrics);
         int mScreenHeight = localDisplayMetrics.heightPixels;
@@ -76,13 +87,11 @@ public class MineFragment extends BaseFragment {
 //            }
 //        });
 //        pullScrollView.init(poster);
-        bindListener();
+        initView();
+        showUser();
     }
 
-    private void bindListener() {
-    }
 
-    @OnClick({R.id.mine_fun_all_order, R.id.mine_fun_evaluate, R.id.mine_fun_payback, R.id.mine_fun_wait_pay, R.id.mine_fun_wait_receive})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.mine_fun_all_order:
@@ -91,6 +100,10 @@ public class MineFragment extends BaseFragment {
             case R.id.mine_fun_wait_pay:
             case R.id.mine_fun_wait_receive:
                 startActivity(new Intent(getActivity(), OrderActivity.class));
+                break;
+            case R.id.txt_username:
+            case R.id.img_head:
+                toLoginActivity(view);
                 break;
         }
     }
@@ -101,31 +114,35 @@ public class MineFragment extends BaseFragment {
         User user = App.getInstance().getUser();
         if (user == null) {
 //            mbtnLogout.setVisibility(View.GONE);
-//            mTxtUserName.setText(R.string.to_login);
-
+            mTxtUserName.setText(R.string.to_login);
         } else {
-
 //            mbtnLogout.setVisibility(View.VISIBLE);
 //            if (!TextUtils.isEmpty(user.getLogo_url()))
 //                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);
+            mTxtUserName.setText(user.getNicheng());
 
-//            mTxtUserName.setText(user.getUsername());
-
+            loadMineData();
         }
 
     }
 
 
-    @OnClick({R.id.img_head, R.id.txt_username})
     public void toLoginActivity(View view) {
 
 
-        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        Intent intent = new Intent(getActivity(), SettingActivity.class);
 
-        startActivityForResult(intent, Contants.REQUEST_CODE);
+        startActivityForResult(intent, true, Contants.REQUEST_CODE);
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == Contants.REQUEST_CODE && resultCode == getActivity().RESULT_OK) {
+            showUser();
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -135,9 +152,73 @@ public class MineFragment extends BaseFragment {
         return rootView;
     }
 
+    private void initView() {
+        mineFunAllOrder = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_fun_all_order);
+        mineFunWaitPay = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_fun_wait_pay);
+        mineFunWaitReceive = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_fun_wait_receive);
+        mineFunPayback = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_fun_payback);
+        mineFunEvaluate = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_fun_evaluate);
+        mTBoardBottom = (LinearLayout) pullScrollView.getPullRootView().findViewById(R.id.m_t_board_bottom);
+        contentContainer = (LinearLayout) pullScrollView.getPullRootView().findViewById(R.id.content_container);
+        mTxtUserName = (TextView) pullScrollView.getPullRootView().findViewById(R.id.txt_username);
+
+        attenCountTv = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_atten_shop_tv);
+        fansTv = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_fansno_tv);
+        salecardTv = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_quan_tv);
+        bankNoTv = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_hb_bankno_tv);
+        availableMoneyTv = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_hb_availablemoney_tv);
+        frozenMoneyTv = (TextView) pullScrollView.getPullRootView().findViewById(R.id.mine_hb_frozenmoney_tv);
+
+        imgHead = (CircleImageView) pullScrollView.getPullRootView().findViewById(R.id.img_head);
+
+        mineFunAllOrder.setOnClickListener(this);
+        mineFunWaitPay.setOnClickListener(this);
+        mineFunWaitReceive.setOnClickListener(this);
+        mineFunPayback.setOnClickListener(this);
+        mineFunEvaluate.setOnClickListener(this);
+        mTxtUserName.setOnClickListener(this);
+        imgHead.setOnClickListener(this);
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    private void loadMineData() {
+
+        HashMap<String, Object> param = new Param();
+        param.put("token", App.getInstance().getToken());
+        mHttpHelper.get(Contants.API.MINE, param, new SpotsCallBack<MineMsg>(getActivity()) {
+
+
+            @Override
+            public void onSuccess(Response response, MineMsg respMsg) {
+                if (respMsg != null && respMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
+                    MineMsg.Result result=respMsg.getResult();
+                    Utils.bindStrText(attenCountTv,result.getSccount()+"");
+                    Utils.bindStrText(fansTv,result.getAllFensiCount()+"");
+                    Utils.bindStrText(salecardTv,result.getYhqwaituse()+"");
+                    Utils.bindStrText(bankNoTv,result.getBrankcount()+"");
+                    Utils.bindStrText(availableMoneyTv,result.getAccount().getAvailablePrice()+"");
+                    Utils.bindStrText(frozenMoneyTv,result.getAccount().getFrozenPrice()+"");
+                } else {
+                    showNormalErr(respMsg);
+                }
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+                showFail();
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+                ToastUtils.show(errmsg);
+            }
+        });
+
+
     }
 }

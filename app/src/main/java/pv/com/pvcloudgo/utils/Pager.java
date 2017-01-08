@@ -322,6 +322,11 @@ public class Pager {
                 builder.mRefreshLayout.finishRefreshLoadMore();
             }
         }
+
+        @Override
+        public void onServerError(Response response, int code, String errmsg) {
+
+        }
     }
 
 

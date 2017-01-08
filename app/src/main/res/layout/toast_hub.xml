@@ -14,7 +14,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/ic_back_" />
+        />
 
 
     <TextView
@@ -27,7 +27,6 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="4dp"
-        android:text="注册成功"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 

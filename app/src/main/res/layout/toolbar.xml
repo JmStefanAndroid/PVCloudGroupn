@@ -4,7 +4,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/white"
+    android:background="@color/bg_color"
     android:elevation="4dp"
     android:gravity="bottom"
     app:layout_scrollFlags="scroll|enterAlways"
@@ -49,7 +49,6 @@
         android:textColor="@android:color/white"
         android:textSize="16sp" />
 
-    <View style="@style/line_vertical" />
 
     <FrameLayout
         android:layout_width="wrap_content"

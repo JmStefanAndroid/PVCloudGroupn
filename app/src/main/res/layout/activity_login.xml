@@ -43,6 +43,7 @@
                 style="@style/editText_base"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLength="11"
                 android:hint="手机号/云购账号"
                 android:inputType="phone"
                 android:paddingLeft="40dp" />
@@ -108,14 +109,14 @@
             />
 
         <TextView
+            android:id="@+id/find_pass_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
             android:text="忘记密码"
             android:textColor="@color/dimgrey"
-            android:textSize="12sp"
-            android:id="@+id/find_pass_tv" />
+            android:textSize="12sp" />
 
 
     </LinearLayout>

@@ -3,9 +3,11 @@ package pv.com.pvcloudgo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -14,6 +16,8 @@ import javax.inject.Inject;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.OkHttpHelper;
+import pv.com.pvcloudgo.msg.BaseRespMsg;
+import pv.com.pvcloudgo.utils.ToastUtils;
 
 /**
  */
@@ -59,6 +63,27 @@ public class BaseActivity extends AppCompatActivity {
         }
 
     }
+    public void startActivityForResult(Intent intent, boolean isNeedLogin,int requestCode) {
+
+
+        if (isNeedLogin) {
+
+            User user = App.getInstance().getUser();
+            if (user != null) {
+                super.startActivityForResult(intent,requestCode);
+            } else {
+
+                App.getInstance().putIntent(intent);
+                Intent loginIntent = new Intent(mContext, LoginActivity.class);
+                super.startActivityForResult(loginIntent,requestCode);
+
+            }
+
+        } else {
+            super.startActivityForResult(intent,requestCode);
+        }
+
+    }
 
     protected void setupToolbar(Toolbar mToolbar, boolean homeIconVisible) {
         if (mToolbar == null) {
@@ -70,7 +95,7 @@ public class BaseActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(homeIconVisible);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        mToolbar.setNavigationIcon(R.drawable.ic_arr_left_3);
+        mToolbar.setNavigationIcon(R.drawable.fanhui);
     }
 
     protected void setupToolbar(Toolbar mToolbar, boolean homeIconVisible, View.OnClickListener onBackListener) {
@@ -95,6 +120,28 @@ public class BaseActivity extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+
+    public void showNormalErr(BaseRespMsg respMsg) {
+        if (respMsg == null || TextUtils.isEmpty(respMsg.getMessage())) {
+            showFail();
+        } else {
+            ToastUtils.show(respMsg.getMessage());
+        }
+
+    }
+
+    public void showFail() {
+        if (Looper.myLooper() != Looper.getMainLooper()){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ToastUtils.show(mContext, getString(R.string.err_net_connect));
+                }
+            });
+        }else
+            ToastUtils.show(this, getString(R.string.err_net_connect));
     }
 
 }

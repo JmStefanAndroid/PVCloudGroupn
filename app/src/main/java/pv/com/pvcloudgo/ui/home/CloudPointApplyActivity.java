@@ -477,6 +477,11 @@ public class CloudPointApplyActivity extends BaseActivity {
             public void onError(Response response, int code, Exception e) {
 
             }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
         });
 
 

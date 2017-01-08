@@ -21,6 +21,7 @@ import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.Address;
 import pv.com.pvcloudgo.http.SpotsCallBack;
 import pv.com.pvcloudgo.msg.BaseRespMsg;
+import pv.com.pvcloudgo.utils.ToastUtils;
 import pv.com.pvcloudgo.widget.PVToolBar;
 
 
@@ -100,6 +101,11 @@ public class AddressListActivity extends BaseActivity {
             public void onError(Response response, int code, Exception e) {
 
             }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
         });
     }
 
@@ -151,6 +157,11 @@ public class AddressListActivity extends BaseActivity {
             @Override
             public void onError(Response response, int code, Exception e) {
 
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+                ToastUtils.show(errmsg);
             }
         });
 

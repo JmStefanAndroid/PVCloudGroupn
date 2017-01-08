@@ -41,6 +41,8 @@
     <string name="tt_buynow">超级闪购</string>
     <string name="tt_168custom">168巅峰定制</string>
 
+    <string name="err_net_connect">连接到服务器失败</string>
+    <string name="resend_identify_code">重新获取验证码</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

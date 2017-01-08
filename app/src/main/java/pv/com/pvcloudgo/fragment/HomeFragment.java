@@ -16,6 +16,8 @@ import com.google.gson.Gson;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.Bind;
@@ -25,9 +27,11 @@ import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.WareListActivity;
 import pv.com.pvcloudgo.adapter.HomeCatgoryAdapter;
 import pv.com.pvcloudgo.adapter.decoration.CardViewtemDecortion;
+import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.Banner;
 import pv.com.pvcloudgo.bean.Campaign;
 import pv.com.pvcloudgo.bean.HomeCampaign;
+import pv.com.pvcloudgo.bean.Param;
 import pv.com.pvcloudgo.http.BaseCallback;
 import pv.com.pvcloudgo.http.SpotsCallBack;
 
@@ -35,17 +39,12 @@ import pv.com.pvcloudgo.http.SpotsCallBack;
 public class HomeFragment extends BaseFragment {
 
 
+    private static final String TAG = "HomeFragment";
     @Bind(R.id.slider)
     SliderLayout mSliderLayout;
     @Bind(R.id.recyclerview)
     RecyclerView mRecyclerView;
-
     private HomeCatgoryAdapter mAdatper;
-
-
-    private static final String TAG = "HomeFragment";
-
-
     private Gson mGson = new Gson();
 
     private List<Banner> mBanner;
@@ -62,8 +61,10 @@ public class HomeFragment extends BaseFragment {
     public void init() {
 
         requestImages();
+        loadHomeData();
 
         initRecyclerView();
+        initData(new ArrayList<>());
     }
 
 
@@ -84,6 +85,11 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void onError(Response response, int code, Exception e) {
+
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
 
             }
         });
@@ -120,6 +126,11 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void onError(Response response, int code, Exception e) {
+
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
 
             }
 
@@ -190,8 +201,8 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-if(mSliderLayout!=null)
-        mSliderLayout.stopAutoCycle();
+        if (mSliderLayout != null)
+            mSliderLayout.stopAutoCycle();
     }
 
     @Override
@@ -200,5 +211,30 @@ if(mSliderLayout!=null)
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
+    }
+
+
+    private void loadHomeData() {
+
+        HashMap<String, Object> param = new Param();
+        param.put("token", App.getInstance().getToken());
+//        mHttpHelper.get(Contants.API.HOME, param, new SpotsCallBack<List<Banner>>(getActivity()) {
+//
+//
+//            @Override
+//            public void onSuccess(Response response, List<Banner> respMsg) {
+//                if (respMsg != null && respMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
+//                } else {
+//                    showNormalErr(respMsg);
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response response, int code, Exception e) {
+//                showFail();
+//            }
+//        });
+
+
     }
 }

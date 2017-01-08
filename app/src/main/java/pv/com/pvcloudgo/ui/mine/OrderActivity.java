@@ -58,7 +58,7 @@ public class OrderActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_layout_model);
+        setContentView(R.layout.activity_order);
         ButterKnife.bind(this);
 
 
@@ -122,6 +122,11 @@ public class OrderActivity extends BaseActivity {
             public void onError(Response response, int code, Exception e) {
 
             }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
         });
 
 
@@ -171,6 +176,11 @@ public class OrderActivity extends BaseActivity {
 
             @Override
             public void onError(Response response, int code, Exception e) {
+
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
 
             }
 

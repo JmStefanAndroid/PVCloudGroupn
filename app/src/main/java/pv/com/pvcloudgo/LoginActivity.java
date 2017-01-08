@@ -11,15 +11,15 @@ import android.widget.TextView;
 
 import com.squareup.okhttp.Response;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.bean.Param;
 import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.msg.BaseRespMsg;
 import pv.com.pvcloudgo.msg.LoginResp;
 import pv.com.pvcloudgo.utils.ToastUtils;
 import pv.com.pvcloudgo.widget.ClearEditText;
@@ -110,28 +110,32 @@ public class LoginActivity extends BaseActivity {
         }
 
 
-        Map<String, Object> params = new HashMap<>(2);
+        Map<String, Object> params = new Param(3);
         params.put("name", phone);
         params.put("password", pwd);
 
-        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginResp<User>>(this) {
+        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginResp>(this) {
 
 
             @Override
-            public void onSuccess(Response response, LoginResp<User> userLoginRespMsg) {
+            public void onSuccess(Response response, LoginResp userLoginRespMsg) {
+                if (userLoginRespMsg != null && userLoginRespMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
 
 
-                App application = App.getInstance();
-                application.putUser(userLoginRespMsg.getResults().getMyUser(), userLoginRespMsg.getResults().getToken());
-
-                if (application.getIntent() == null) {
+                    App application = App.getInstance();
+                    application.putUser(userLoginRespMsg.getResults().getMyUser(), userLoginRespMsg.getResults().getToken());
                     setResult(RESULT_OK);
                     finish();
+//                    if (application.getIntent() == null) {
+//                        setResult(RESULT_OK);
+//                        finish();
+//                    } else {
+//                        application.jumpToTargetActivity(LoginActivity.this);
+//                        finish();
+//
+//                    }
                 } else {
-
-                    application.jumpToTargetActivity(LoginActivity.this);
-                    finish();
-
+                    showNormalErr(userLoginRespMsg);
                 }
 
 
@@ -139,7 +143,13 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onError(Response response, int code, Exception e) {
+                showFail();
 
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+                ToastUtils.show(errmsg);
             }
         });
 

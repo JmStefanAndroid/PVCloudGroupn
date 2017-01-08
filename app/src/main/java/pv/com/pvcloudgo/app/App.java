@@ -3,27 +3,29 @@ package pv.com.pvcloudgo.app;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.dagger.AppComponent;
 import pv.com.pvcloudgo.dagger.DaggerAppComponent;
+import pv.com.pvcloudgo.utils.ToastUtils;
 import pv.com.pvcloudgo.utils.UserLocalData;
 
 public class App extends Application {
 
+    private  final String TAG = this.getClass().getSimpleName();
     private static AppComponent appComponent;
     private User user;
 
     private static App mInstance;
 
 
-    public static App getInstance(){
+    public static App getInstance() {
 
-        return  mInstance;
+        return mInstance;
     }
-
 
 
     @Override
@@ -33,7 +35,10 @@ public class App extends Application {
 
         buildComponentAndInject();
 
+
         initUser();
+
+        ToastUtils.initialize(this);
         Fresco.initialize(this);
 
     }
@@ -47,28 +52,27 @@ public class App extends Application {
     }
 
 
-
-
-    private void initUser(){
+    private void initUser() {
 
         this.user = UserLocalData.getUser(this);
+        if (this.user != null) Log.e(TAG, user.toString());
     }
 
 
-    public User getUser(){
+    public User getUser() {
 
         return user;
     }
 
 
-    public void putUser(User user,String token){
+    public void putUser(User user, String token) {
         this.user = user;
-        UserLocalData.putUser(this,user);
-        UserLocalData.putToken(this,token);
+        UserLocalData.putUser(this, user);
+        UserLocalData.putToken(this, token);
     }
 
-    public void clearUser(){
-        this.user =null;
+    public void clearUser() {
+        this.user = null;
         UserLocalData.clearUser(this);
         UserLocalData.clearToken(this);
 
@@ -76,15 +80,15 @@ public class App extends Application {
     }
 
 
-    public String getToken(){
+    public String getToken() {
 
-        return  UserLocalData.getToken(this);
+        return UserLocalData.getToken(this);
     }
 
 
+    private Intent intent;
 
-    private  Intent intent;
-    public void putIntent(Intent intent){
+    public void putIntent(Intent intent) {
         this.intent = intent;
     }
 
@@ -92,10 +96,10 @@ public class App extends Application {
         return this.intent;
     }
 
-    public void jumpToTargetActivity(Context context){
+    public void jumpToTargetActivity(Context context) {
 
         context.startActivity(intent);
-        this.intent =null;
+        this.intent = null;
     }
 
 }

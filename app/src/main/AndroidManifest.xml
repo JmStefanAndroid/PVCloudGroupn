@@ -100,7 +100,7 @@
             android:value="e73deba501fb3faaa1b5c2729e3eedbe" />
 
         <activity android:name=".MyOrderActivity" />
-        <activity android:name=".OrderDetailActivity" />
+        <activity android:name=".ui.mine.OrderDetailActivity" />
         <activity android:name=".MyFavoriteActivity" />
 
         <!-- above activity that demo required,has nothing to with umeng sdk -->
@@ -190,6 +190,8 @@
         <activity android:name=".ui.home.AboutUsActivity"></activity>
         <activity android:name=".ui.vip.ShopActivity"></activity>
         <activity android:name=".ui.mine.SettingActivity"></activity>
+        <activity android:name=".ui.mine.OrderActivity"></activity>
+        <activity android:name=".ui.mine.PersonalInfoActivity"></activity>
     </application>
 
 </manifest>

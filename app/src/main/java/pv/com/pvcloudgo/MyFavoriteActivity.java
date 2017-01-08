@@ -82,6 +82,11 @@ public class MyFavoriteActivity extends BaseActivity {
 
                 Log.d("xx","code:"+code);
             }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
         });
     }
 

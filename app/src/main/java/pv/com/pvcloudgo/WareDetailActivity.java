@@ -207,6 +207,11 @@ public class WareDetailActivity extends BaseActivity implements View.OnClickList
 
                 Log.d("x","code:"+code);
             }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
         });
 
     }
