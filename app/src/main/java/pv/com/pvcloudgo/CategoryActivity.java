@@ -2,21 +2,17 @@ package pv.com.pvcloudgo;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TextView;
 
 import com.squareup.okhttp.Response;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.bean.Param;
 import pv.com.pvcloudgo.http.SpotsCallBack;
-import pv.com.pvcloudgo.msg.LoginRespMsg;
-import pv.com.pvcloudgo.utils.DESUtil;
+import pv.com.pvcloudgo.msg.CategoryResp;
 
 public class CategoryActivity extends BaseActivity {
 
@@ -53,37 +49,20 @@ public class CategoryActivity extends BaseActivity {
         finish();
     }
 
-    public void login(View view) {
+    public void load() {
 
 
-        String phone = null;
-
-        String pwd = null;
 
 
-        Map<String, Object> params = new HashMap<>(2);
-        params.put("phone", phone);
-        params.put("password", DESUtil.encode(Contants.DES_KEY, pwd));
+        Map<String, Object> params = new Param(1);
 
-        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
+        mHttpHelper.post(Contants.API.productTypeList, params, new SpotsCallBack<CategoryResp>(this) {
 
 
             @Override
-            public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
+            public void onSuccess(Response response, CategoryResp mCategoryResp) {
 
 
-                App application = App.getInstance();
-                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
-
-                if (application.getIntent() == null) {
-                    setResult(RESULT_OK);
-                    finish();
-                } else {
-
-                    application.jumpToTargetActivity(mContext);
-                    finish();
-
-                }
 
 
             }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/middlePadding"
+            android:paddingRight="@dimen/middlePadding">
+
+            <CheckBox
+                android:id="@+id/item_t_check_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_checkbox"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/middlePadding"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_s_mall"
+                android:singleLine="true"
+                android:text="品牌名称"
+                android:textColor="@color/blackgray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编辑"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_vertical"
+            android:layout_marginLeft="@dimen/largePadding"
+            android:layout_marginRight="@dimen/largePadding" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/good_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f7f7f7"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+</LinearLayout>

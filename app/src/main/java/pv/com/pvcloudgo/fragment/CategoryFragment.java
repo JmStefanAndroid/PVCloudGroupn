@@ -15,6 +15,7 @@ import com.cjj.MaterialRefreshListener;
 import com.squareup.okhttp.Response;
 
 import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,9 +28,11 @@ import pv.com.pvcloudgo.adapter.WaresAdapter;
 import pv.com.pvcloudgo.adapter.decoration.DividerItemDecoration;
 import pv.com.pvcloudgo.bean.Category;
 import pv.com.pvcloudgo.bean.Page;
+import pv.com.pvcloudgo.bean.Param;
 import pv.com.pvcloudgo.bean.Wares;
 import pv.com.pvcloudgo.http.SimpleCallback;
 import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.msg.CategoryResp;
 
 
 public class CategoryFragment extends BaseFragment {
@@ -273,6 +276,33 @@ public class CategoryFragment extends BaseFragment {
         ButterKnife.bind(this, rootView);
         return rootView;
     }
+
+
+    public void load() {
+
+        Map<String, Object> params = new Param(1);
+        mHttpHelper.post(Contants.API.productTypeList, params, new SpotsCallBack<CategoryResp>(getActivity()) {
+
+
+            @Override
+            public void onSuccess(Response response, CategoryResp mCategoryResp) {
+
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
+        });
+
+
+    }
+
 }
 
 

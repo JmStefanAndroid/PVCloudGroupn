@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/middlePadding"
+    android:layout_marginTop="@dimen/middlePadding"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/middlePadding">
+
+        <CheckBox
+            android:id="@+id/item_t_check_tb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:button="@drawable/selector_checkbox"
+            android:checked="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_rec_transparent_cus"
+            android:text="失效"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <com.facebook.drawee.view.DraweeView
+        android:id="@+id/item_ff"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/largePadding"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pp_shoes" />
+
+    <LinearLayout
+        android:id="@+id/normal_content"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/smallPadding"
+        android:layout_weight="1"
+        android:orientation="vertical"
+     >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="高腰显瘦百褶裙 闺蜜装A字裙"
+            android:textColor="@color/blackgray"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/smallPadding"
+            android:singleLine="true"
+            android:text="颜色：浅蓝，尺码：S"
+            android:textColor="@color/gray"
+            android:textSize="11sp" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/middlePadding">
+
+            <TextView
+                android:id="@+id/item_gi_now_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="￥288.00"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_gi_old_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
+                android:layout_toRightOf="@+id/item_gi_now_price_tv"
+                android:text="￥686.00"
+                android:textColor="@color/gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/item_gi_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/middlePadding"
+                android:text="x1"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edt_content"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/smallPadding"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="#ecedef"
+                    android:gravity="center"
+                    android:text="-" />
+
+                <EditText
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="#ecedef"
+                    android:gravity="center"
+                    android:text="+" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/middlePadding"
+                android:singleLine="true"
+                android:text="颜色：浅蓝，尺码：S"
+                android:textColor="@color/gray"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#8879fd"
+            android:gravity="center"
+            android:paddingLeft="@dimen/largePadding"
+            android:paddingRight="@dimen/largePadding"
+            android:text="删除"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,7 +1,9 @@
 package pv.com.pvcloudgo.bean;
 
 
-public class Category extends BaseBean {
+import java.util.List;
+
+public class CRoot1 extends BaseBean {
 
     String orderIndex;
     String webTiCheng;
@@ -20,18 +22,24 @@ public class Category extends BaseBean {
     String treeId;
     int fatherId;
     String allName;
+    List<CRoo2> childs;
 
 
-
-    public Category() {
+    public List<CRoo2> getChilds() {
+        return childs;
     }
 
-    public Category(String name) {
+
+
+    public CRoot1() {
+    }
+
+    public CRoot1(String name) {
 
         this.name = name;
     }
 
-    public Category(long id, String name) {
+    public CRoot1(long id, String name) {
         this.id = id;
         this.name = name;
     }

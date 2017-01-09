@@ -22,8 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pv.com.pvcloudgo.CreateOrderActivity;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.adapter.CartAdapter;
-import pv.com.pvcloudgo.adapter.ShopCirRecyclerViewAdapter;
+import pv.com.pvcloudgo.adapter.ShopCartAdapter;
 import pv.com.pvcloudgo.bean.ShoppingCart;
 import pv.com.pvcloudgo.fragment.dummy.DummyContent;
 import pv.com.pvcloudgo.utils.CartProvider;
@@ -61,7 +60,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
     ImageView imageExit;
 
 
-    private CartAdapter mAdapter;
+    private ShopCartAdapter mAdapter;
     private CartProvider cartProvider;
 
 
@@ -83,7 +82,8 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
 
     private void initXRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-        mRecyclerView.setAdapter(new ShopCirRecyclerViewAdapter(DummyContent.ITEMS, null));
+        mAdapter=new ShopCartAdapter(DummyContent.ITEMS, null);
+        mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -115,7 +115,6 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
     @OnClick(R.id.btn_del)
     public void delCart(View view) {
 
-        mAdapter.delCart();
     }
 
     @OnClick(R.id.btn_order)
@@ -145,10 +144,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
 
     public void refData() {
 
-        mAdapter.clear();
         List<ShoppingCart> carts = cartProvider.getAll();
-        mAdapter.addData(carts);
-        mAdapter.showTotalPrice();
 
 
     }
@@ -171,7 +167,6 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
         mBtnDel.setVisibility(View.VISIBLE);
         toolbarRightTitle.setTag(ACTION_CAMPLATE);
 
-        mAdapter.checkAll_None(false);
         mCheckBox.setChecked(false);
 
     }
@@ -185,8 +180,6 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
         toolbarRightTitle.setText("编辑");
         toolbarRightTitle.setTag(ACTION_EDIT);
 
-        mAdapter.checkAll_None(true);
-        mAdapter.showTotalPrice();
 
         mCheckBox.setChecked(true);
     }
