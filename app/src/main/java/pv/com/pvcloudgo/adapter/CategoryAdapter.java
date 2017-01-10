@@ -2,6 +2,8 @@ package pv.com.pvcloudgo.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -25,11 +27,25 @@ public class CategoryAdapter extends SimpleAdapter<Category> {
 
             viewHoder.getView(R.id.parentPanel).
                     setBackgroundColor(Color.WHITE);
-        } else
+
+            viewHoder.getView(R.id.divider).
+                    setVisibility(View.VISIBLE);
+
+            ((TextView)viewHoder.getView(R.id.textView)).
+                    setTextColor(viewHoder.getView(R.id.parentPanel)
+                            .getResources().getColor(R.color.purple));
+        } else {
             viewHoder.getView(R.id.parentPanel).
                     setBackgroundColor(viewHoder.getView(R.id.parentPanel)
                             .getResources().getColor(R.color.gainsboro));
+            viewHoder.getView(R.id.divider).
+                    setVisibility(View.GONE);
+            ((TextView)viewHoder.getView(R.id.textView)).
+                    setTextColor(viewHoder.getView(R.id.parentPanel)
+                            .getResources().getColor(R.color.black));
+        }
         viewHoder.getTextView(R.id.textView).setText(item.getName());
+
 
     }
 

@@ -20,13 +20,13 @@ public class CategoryResp extends BaseRespMsg {
     public class Result {
         List<Category> ptTypeList;
 
-        List<CRoot1> firstRoot;
+        CRoot1 firstRoot;
 
         public List<Category> getPtTypeList() {
             return ptTypeList;
         }
 
-        public List<CRoot1> getFirstRoot() {
+        public CRoot1 getFirstRoot() {
             return firstRoot;
         }
     }

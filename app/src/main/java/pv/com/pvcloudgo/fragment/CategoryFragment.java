@@ -71,8 +71,8 @@ public class CategoryFragment extends BaseFragment {
     @Override
     public void init() {
 
-        requestCategoryData();
-
+//        requestCategoryData();
+        load();
         initRefreshLayout();
     }
 
@@ -281,11 +281,19 @@ public class CategoryFragment extends BaseFragment {
     public void load() {
 
         Map<String, Object> params = new Param(1);
-        mHttpHelper.post(Contants.API.productTypeList, params, new SpotsCallBack<CategoryResp>(getActivity()) {
+        mHttpHelper.get(Contants.API.productTypeList, params, new SpotsCallBack<CategoryResp>(getActivity()) {
 
 
             @Override
             public void onSuccess(Response response, CategoryResp mCategoryResp) {
+                if(mCategoryResp!=null&&mCategoryResp.getResults()!=null){
+                    List<Category> categories =  mCategoryResp.getResults().getPtTypeList();
+                    showCategoryData(categories);
+
+                    if (categories != null && categories.size() > 0)
+                        category_id = categories.get(0).getId();
+                    requestWares(category_id);
+                }
 
             }
 

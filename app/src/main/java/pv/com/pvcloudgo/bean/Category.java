@@ -4,7 +4,7 @@ package pv.com.pvcloudgo.bean;
 public class Category extends BaseBean {
 
     String orderIndex;
-    String webTiCheng;
+    float webTiCheng;
     String isQuanqiugou;
     String quanqiugouShuiType;
     float omoy_root_backbill;
@@ -49,7 +49,7 @@ public class Category extends BaseBean {
         return orderIndex;
     }
 
-    public String getWebTiCheng() {
+    public float getWebTiCheng() {
         return webTiCheng;
     }
 
