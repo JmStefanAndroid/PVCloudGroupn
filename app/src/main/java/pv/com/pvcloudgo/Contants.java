@@ -30,6 +30,7 @@ public class Contants {
 
         public static final String WARES_HOT=BASE_URL + "wares/hot";
         public static final String WARES_LIST=BASE_URL +"wares/list";
+        public static final String findByRoot=BASE_URL +"app/productType/findByRoot";
         public static final String WARES_CAMPAIN_LIST=BASE_URL +"wares/campaign/list";
         public static final String WARES_DETAIL=BASE_URL +"wares/detail.html";
 

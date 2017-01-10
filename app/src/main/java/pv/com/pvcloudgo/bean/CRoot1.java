@@ -22,10 +22,10 @@ public class CRoot1 extends BaseBean {
     String treeId;
     int fatherId;
     String allName;
-    List<CRoo2> childs;
+    List<CRoot2> childs;
 
 
-    public List<CRoo2> getChilds() {
+    public List<CRoot2> getChilds() {
         return childs;
     }
 

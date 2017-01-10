@@ -1,6 +1,5 @@
 package pv.com.pvcloudgo.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,6 +13,7 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.squareup.okhttp.Response;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,18 +21,18 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.WareDetailActivity;
 import pv.com.pvcloudgo.adapter.BaseAdapter;
 import pv.com.pvcloudgo.adapter.CategoryAdapter;
-import pv.com.pvcloudgo.adapter.WaresAdapter;
+import pv.com.pvcloudgo.adapter.CategoryThingsAdapter;
 import pv.com.pvcloudgo.adapter.decoration.DividerItemDecoration;
+import pv.com.pvcloudgo.bean.CRoot2;
 import pv.com.pvcloudgo.bean.Category;
-import pv.com.pvcloudgo.bean.Page;
 import pv.com.pvcloudgo.bean.Param;
-import pv.com.pvcloudgo.bean.Wares;
 import pv.com.pvcloudgo.http.SimpleCallback;
 import pv.com.pvcloudgo.http.SpotsCallBack;
 import pv.com.pvcloudgo.msg.CategoryResp;
+import pv.com.pvcloudgo.msg.CategoryRootResp;
+import pv.com.pvcloudgo.utils.ToastUtils;
 
 
 public class CategoryFragment extends BaseFragment {
@@ -47,7 +47,7 @@ public class CategoryFragment extends BaseFragment {
 
 
     private CategoryAdapter mCategoryAdapter;
-    private WaresAdapter mWaresAdatper;
+    private CategoryThingsAdapter mCategoryThingsAdapter;
 
 
     private int currPage = 1;
@@ -61,6 +61,7 @@ public class CategoryFragment extends BaseFragment {
     private static final int STATE_MORE = 2;
 
     private int state = STATE_NORMAL;
+    private List<Category> mCategories;
 
 
     @Override
@@ -151,7 +152,7 @@ public class CategoryFragment extends BaseFragment {
 
     private void showCategoryData(List<Category> categories) {
 
-
+        this.mCategories = categories;
         mCategoryAdapter = new CategoryAdapter(getActivity(), categories);
 
         mCategoryAdapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
@@ -178,22 +179,22 @@ public class CategoryFragment extends BaseFragment {
     }
 
 
-    private void requestWares(long categoryId) {
+    private void requestWares(long ptId) {
+        HashMap<String, Object> params = new Param(2);
+        params.put("ptId", ptId);
 
-        String url = Contants.API.WARES_LIST + "?categoryId=" + categoryId + "&curPage=" + currPage + "&pageSize=" + pageSize;
-
-        mHttpHelper.get(url, new SimpleCallback<Page<Wares>>(getActivity()) {
+        mHttpHelper.get(Contants.API.findByRoot, new SimpleCallback<CategoryRootResp>(getActivity()) {
 
 
             @Override
-            public void onSuccess(Response response, Page<Wares> waresPage) {
+            public void onSuccess(Response response, CategoryRootResp resp) {
 
 
-                currPage = waresPage.getCurrentPage();
-                totalPage = waresPage.getTotalPage();
-
-                showWaresData(waresPage.getList());
-
+                if (resp != null && resp.getResults() != null && resp.getResults().getProductType() != null &&
+                        resp.getResults().getProductType().getChilds() != null &&
+                        resp.getResults().getProductType().getChilds().size() != 0) {
+                    showWaresData(resp.getResults().getProductType().getChilds());
+                } else ToastUtils.show("暂无数据");
 
             }
 
@@ -213,52 +214,40 @@ public class CategoryFragment extends BaseFragment {
     }
 
 
-    private void showWaresData(List<Wares> wares) {
+    private void showWaresData(List<CRoot2> mValues) {
 
 
         switch (state) {
 
             case STATE_NORMAL:
 
-                if (mWaresAdatper == null) {
-                    mWaresAdatper = new WaresAdapter(getActivity(), wares);
-                    mWaresAdatper.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(View view, int position) {
-                            Wares wares = mWaresAdatper.getItem(position);
+                if (mCategoryThingsAdapter == null) {
+                    mCategoryThingsAdapter = new CategoryThingsAdapter(getActivity(), mValues);
 
-                            Intent intent = new Intent(getActivity(), WareDetailActivity.class);
-
-                            intent.putExtra(Contants.WARE, wares);
-                            startActivity(intent);
-
-                        }
-                    });
-
-                    mRecyclerviewWares.setAdapter(mWaresAdatper);
+                    mRecyclerviewWares.setAdapter(mCategoryThingsAdapter);
 
                     mRecyclerviewWares.setLayoutManager(new GridLayoutManager(getActivity(), 3));
                     mRecyclerviewWares.setItemAnimator(new DefaultItemAnimator());
 //                    mRecyclerviewWares.addItemDecoration(new DividerGridItemDecoration(getContext()));
                 } else {
-                    mWaresAdatper.clear();
-                    mWaresAdatper.addData(wares);
+                    mCategoryThingsAdapter.clear();
+                    mCategoryThingsAdapter.bindNew(mValues);
                 }
 
 
                 break;
 
             case STATE_REFREH:
-                mWaresAdatper.clear();
-                mWaresAdatper.addData(wares);
+                mCategoryThingsAdapter.clear();
+                mCategoryThingsAdapter.bindNew(mValues);
 
                 mRecyclerviewWares.scrollToPosition(0);
                 mRefreshLaout.finishRefresh();
                 break;
 
             case STATE_MORE:
-                mWaresAdatper.addData(mWaresAdatper.getDatas().size(), wares);
-                mRecyclerviewWares.scrollToPosition(mWaresAdatper.getDatas().size());
+//                mWaresAdatper.addData(mWaresAdatper.getDatas().size(), wares);
+//                mRecyclerviewWares.scrollToPosition(mWaresAdatper.getDatas().size());
                 mRefreshLaout.finishRefreshLoadMore();
                 break;
 
@@ -286,8 +275,8 @@ public class CategoryFragment extends BaseFragment {
 
             @Override
             public void onSuccess(Response response, CategoryResp mCategoryResp) {
-                if(mCategoryResp!=null&&mCategoryResp.getResults()!=null){
-                    List<Category> categories =  mCategoryResp.getResults().getPtTypeList();
+                if (mCategoryResp != null && mCategoryResp.getResults() != null) {
+                    List<Category> categories = mCategoryResp.getResults().getPtTypeList();
                     showCategoryData(categories);
 
                     if (categories != null && categories.size() > 0)

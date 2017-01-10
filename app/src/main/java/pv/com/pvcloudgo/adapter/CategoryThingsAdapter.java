@@ -1,5 +1,9 @@
 package pv.com.pvcloudgo.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,18 +11,21 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.R;
-import pv.com.pvcloudgo.fragment.dummy.DummyContent.DummyItem;
+import pv.com.pvcloudgo.WareDetailActivity;
+import pv.com.pvcloudgo.bean.CRoot2;
+import pv.com.pvcloudgo.bean.Category;
 import pv.com.pvcloudgo.fragment.interf.OnItemClickListener;
 
 public class CategoryThingsAdapter extends RecyclerView.Adapter<CategoryThingsAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
-    private final OnItemClickListener mListener;
+    private List<CRoot2> mValues;
+    private Context mContext;
 
-    public CategoryThingsAdapter(List<DummyItem> items, OnItemClickListener listener) {
-        mValues = items;
-        mListener = listener;
+    public CategoryThingsAdapter(Context mContext, List<CRoot2> mValues) {
+        this.mContext = mContext;
+        this.mValues = mValues;
     }
 
     @Override
@@ -32,16 +39,6 @@ public class CategoryThingsAdapter extends RecyclerView.Adapter<CategoryThingsAd
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onItemClick(holder.getAdapterPosition());
-                }
-            }
-        });
     }
 
     @Override
@@ -51,12 +48,52 @@ public class CategoryThingsAdapter extends RecyclerView.Adapter<CategoryThingsAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public DummyItem mItem;
+        public CRoot2 mItem;
+        public RecyclerView recyclerView;
+        private WaresAdapter mWaresAdatper;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
+            recyclerView = (RecyclerView) view.findViewById(R.id.item_c_thins_recyclerview);
+
+
+            if (mWaresAdatper == null) {
+                mWaresAdatper = new WaresAdapter(view.getContext(), mItem.getChilds());
+                mWaresAdatper.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Category wares = mWaresAdatper.getItem(position);
+
+                        Intent intent = new Intent(view.getContext(), WareDetailActivity.class);
+
+                        intent.putExtra(Contants.WARE, wares);
+                        view.getContext().startActivity(intent);
+
+                    }
+                });
+
+                recyclerView.setAdapter(mWaresAdatper);
+
+                recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(), 3));
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
+//                    mRecyclerviewWares.addItemDecoration(new DividerGridItemDecoration(getContext()));
+            } else {
+                mWaresAdatper.clear();
+                mWaresAdatper.addData(mItem.getChilds());
+            }
+
+
         }
 
+    }
+
+    public void clear() {
+        mValues.clear();
+    }
+
+    public void bindNew(List<CRoot2> items) {
+        this.mValues = items;
+        notifyDataSetChanged();
     }
 }

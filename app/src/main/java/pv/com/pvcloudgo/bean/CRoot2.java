@@ -3,7 +3,7 @@ package pv.com.pvcloudgo.bean;
 
 import java.util.List;
 
-public class CRoo2 extends BaseBean {
+public class CRoot2 extends BaseBean {
 
     String orderIndex;
     String webTiCheng;
@@ -29,15 +29,15 @@ public class CRoo2 extends BaseBean {
         return childs;
     }
 
-    public CRoo2() {
+    public CRoot2() {
     }
 
-    public CRoo2(String name) {
+    public CRoot2(String name) {
 
         this.name = name;
     }
 
-    public CRoo2(long id, String name) {
+    public CRoot2(long id, String name) {
         this.id = id;
         this.name = name;
     }
