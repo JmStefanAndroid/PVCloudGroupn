@@ -2,7 +2,6 @@ package pv.com.pvcloudgo.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -183,7 +182,7 @@ public class CategoryFragment extends BaseFragment {
         HashMap<String, Object> params = new Param(2);
         params.put("ptId", ptId);
 
-        mHttpHelper.get(Contants.API.findByRoot, new SimpleCallback<CategoryRootResp>(getActivity()) {
+        mHttpHelper.get(Contants.API.findByRoot,params, new SimpleCallback<CategoryRootResp>(getActivity()) {
 
 
             @Override
@@ -226,7 +225,7 @@ public class CategoryFragment extends BaseFragment {
 
                     mRecyclerviewWares.setAdapter(mCategoryThingsAdapter);
 
-                    mRecyclerviewWares.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+                    mRecyclerviewWares.setLayoutManager(new LinearLayoutManager(getActivity()));
                     mRecyclerviewWares.setItemAnimator(new DefaultItemAnimator());
 //                    mRecyclerviewWares.addItemDecoration(new DividerGridItemDecoration(getContext()));
                 } else {

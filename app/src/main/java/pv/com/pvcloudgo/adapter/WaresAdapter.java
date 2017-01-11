@@ -27,7 +27,7 @@ public class WaresAdapter extends SimpleAdapter<Category> {
 
         viewHoder.getTextView(R.id.text_title).setText(item.getName());
         SimpleDraweeView draweeView = (SimpleDraweeView) viewHoder.getView(R.id.drawee_view);
-        draweeView.setImageURI(Uri.parse(Contants.API.BASE_URL+item.getWrap_ptlist_rootImage()));
+        draweeView.setImageURI(Uri.parse(Contants.API.BASE_URL+item.getWrap_ptlist_threeImage()));
     }
 
 

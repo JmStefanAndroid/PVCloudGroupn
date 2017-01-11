@@ -29,8 +29,8 @@
     <dimen name="smallButtonTextSize">14.0dip</dimen>
 
 
-    <dimen name="ware_grid_img_width">120dp</dimen>
-    <dimen name="ware_grid_img_height">120dp</dimen>
+    <dimen name="ware_grid_img_width">60dp</dimen>
+    <dimen name="ware_grid_img_height">60dp</dimen>
     <dimen name="ware_img_height">150dp</dimen>
     <dimen name="ware_img_width">150dp</dimen>
     <dimen name="small_ware_img_width">100dp</dimen>
