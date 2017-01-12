@@ -1,35 +1,28 @@
 # PVCloudGroupn
 An online shopping mall(在线商城，持续迭代中..)
+
 # 特别说明  
 *该框架的主要架构为retrofit+dagger2+rxjava+gson
 *该项目最基础的原型来自菜鸟窝，我在其的一个版本上进行改编的，其中大部分的基础工具使用的是菜鸟窝整理的，特别感谢他们的开源
 # 效果图 
+
 <p>
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-52-40.png)
-</br> 
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-52-43.png)
-</br> 
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-52-50.png)
-</br> 
-</p>
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112103014244?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/>
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112103023352?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/>
+
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112103032995?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/></p>
+
 <p>
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-53-03.png)
-</br> 
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-53-14.png)
-</br> 
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-53-49.png)
-</br> 
-<br>
-![PVCloudGroupn](/art/Screenshot_2017-01-12-09-53-58.png)
-</br> 
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112104513923?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/>
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112104534467?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/>
+
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112104544467?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/>
+
 
 </p>
+![这里写图片描述](http://img.blog.csdn.net/20170112104552267?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+
 
 ### THE END
  * 如果有技术合作欢迎联系我
