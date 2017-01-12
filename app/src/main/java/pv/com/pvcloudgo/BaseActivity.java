@@ -17,6 +17,7 @@ import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.OkHttpHelper;
 import pv.com.pvcloudgo.msg.BaseRespMsg;
+import pv.com.pvcloudgo.utils.ActivityManager;
 import pv.com.pvcloudgo.utils.ToastUtils;
 
 /**
@@ -39,6 +40,14 @@ public class BaseActivity extends AppCompatActivity {
         mContext = this;
 
         App.component().inject(this);
+
+        ActivityManager.getInstance().addActivity(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityManager.getInstance().remove(this);
     }
 
     public void startActivity(Intent intent, boolean isNeedLogin) {
@@ -54,7 +63,7 @@ public class BaseActivity extends AppCompatActivity {
                 App.getInstance().putIntent(intent);
                 Intent loginIntent = new Intent(this
                         , LoginActivity.class);
-                super.startActivity(intent);
+                super.startActivity(loginIntent);
 
             }
 
@@ -63,6 +72,8 @@ public class BaseActivity extends AppCompatActivity {
         }
 
     }
+
+
     public void startActivityForResult(Intent intent, boolean isNeedLogin,int requestCode) {
 
 

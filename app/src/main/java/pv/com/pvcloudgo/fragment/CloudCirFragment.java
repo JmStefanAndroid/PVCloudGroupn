@@ -121,7 +121,7 @@ public class CloudCirFragment extends BaseFragment {
     private void initRecyclerView() {
 
 
-        mHttpHelper.get(Contants.API.CAMPAIGN_HOME, new BaseCallback<List<HomeCampaign>>() {
+        mHttpHelper.get(Contants.API.CAMPAIGN_HOME, new BaseCallback<List<HomeCampaign>>(getActivity()) {
             @Override
             public void onBeforeRequest(Request request) {
 

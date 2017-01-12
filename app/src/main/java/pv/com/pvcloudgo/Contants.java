@@ -20,6 +20,7 @@ public class Contants {
 
 
         public static final String BASE_URL="http://www.qdhdn.cn:8080/";
+        public static final String BASE_HOST="www.qdhdn.cn";
 
         public static final String CAMPAIGN_HOME=BASE_URL + "campaign/recommend";
 
@@ -58,6 +59,10 @@ public class Contants {
 
         public static final String FAVORITE_LIST=BASE_URL +"favorite/list";
         public static final String FAVORITE_CREATE=BASE_URL +"favorite/create";
+
+        public static final String LOAD_TC=BASE_URL +"app/productPackage/finds";
+
+        public static final String TELCHONGZHI=BASE_URL +"app/user/telChongzhi/index";
 
 
 

@@ -151,7 +151,7 @@ public class OrderActivity extends BaseActivity {
     private void initRecyclerView() {
 
 
-        mHttpHelper.get(Contants.API.CAMPAIGN_HOME, new BaseCallback<List<HomeCampaign>>() {
+        mHttpHelper.get(Contants.API.CAMPAIGN_HOME, new BaseCallback<List<HomeCampaign>>(mContext) {
             @Override
             public void onBeforeRequest(Request request) {
 

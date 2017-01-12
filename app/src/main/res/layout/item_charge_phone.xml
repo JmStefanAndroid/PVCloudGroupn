@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/largePadding"
+    android:background="@drawable/shape_rrect_purple_trrr"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+>
+
+    <TextView
+        android:id="@+id/item_c_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/middlePadding"
+        android:layout_gravity="center_horizontal"
+        android:text="30"
+        android:textColor="@color/purple"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="(元)"
+        android:textColor="@color/purple"
+        android:textSize="12sp" />
+
+    <View
+        style="@style/line_vertical"
+        android:layout_margin="@dimen/middlePadding" />
+
+    <TextView
+        android:id="@+id/item_c_saleprice_tv"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:textColor="@color/purple"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/item_c_v_tv"
+        android:layout_width="wrap_content"
+        android:text="V值 0.035V"
+        android:textSize="12sp"
+        android:textColor="@color/purple"
+        android:layout_marginBottom="@dimen/largePadding"
+        android:layout_marginTop="@dimen/smallerPadding"
+        android:layout_height="wrap_content" />
+</LinearLayout>

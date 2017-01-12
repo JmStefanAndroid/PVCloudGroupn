@@ -1,5 +1,6 @@
 package pv.com.pvcloudgo.http;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -19,8 +20,11 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import pv.com.pvcloudgo.Contants;
+import pv.com.pvcloudgo.LoginActivity;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.msg.BaseRespMsg;
+import pv.com.pvcloudgo.utils.ActivityManager;
+import pv.com.pvcloudgo.utils.ToastUtils;
 
 
 public class OkHttpHelper {
@@ -102,16 +106,22 @@ public class OkHttpHelper {
                 if (response.isSuccessful()) {
 
                     String resultStr = response.body().string();
-                    Log.e(TAG, "result=" + resultStr);
+                    Log.e(TAG, "URL:"+response.request().httpUrl().url().toString()+" result=" + resultStr);
 
                     if (callback.mType == String.class) {
                         callbackSuccess(callback, response, resultStr);
                     } else {
-                        if (response.request().httpUrl().uri().getHost().contains(Contants.API.BASE_URL)) {
+                        if (response.request().httpUrl().url().toString().contains(Contants.API.BASE_URL)) {
                             try {//尝试解析为基础数据
                                 BaseRespMsg respMsg = mGson.fromJson(resultStr, BaseRespMsg.class);
                                 if (respMsg != null && respMsg.getStatus().equals(BaseRespMsg.STATUS_ERROR) && !TextUtils.isEmpty(respMsg.getMessage())) {
-
+                                    ToastUtils.show(respMsg.getMessage());
+                                    if(respMsg.getMessage().equals("抱歉，请先登录")){
+                                        App application = App.getInstance();
+                                        application.clearUser();
+                                        ActivityManager.getInstance().finishAll();
+                                        callback.mContext.startActivity(new Intent(callback.mContext, LoginActivity.class));
+                                    }
                                     callback.onServerError(response, response.code(), respMsg.getMessage());
                                     return;
                                 }
@@ -131,7 +141,7 @@ public class OkHttpHelper {
                         }
                     }
                 } else if (response.code() == TOKEN_ERROR || response.code() == TOKEN_EXPIRE || response.code() == TOKEN_MISSING) {
-                    Log.e(TAG, "err=" + response.body().string());
+                    Log.e(TAG, "TOKEN err=" + response.body().string());
                     callbackTokenError(callback, response);
                 } else {
                     Log.e(TAG, "err=" + response.body().string());
@@ -236,7 +246,7 @@ public class OkHttpHelper {
         if (params == null)
             params = new HashMap<>(1);
 
-        String token = App.getInstance().getToken();
+        String  token= App.getInstance().getToken();
         if (!TextUtils.isEmpty(token))
             params.put("token", token);
 

@@ -3,26 +3,32 @@ package pv.com.pvcloudgo.ui.home;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.okhttp.Response;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pv.com.pvcloudgo.BaseActivity;
 import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.R;
+import pv.com.pvcloudgo.adapter.BaseAdapter;
+import pv.com.pvcloudgo.adapter.ChargeItemAdapter;
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.bean.ChargeRule;
+import pv.com.pvcloudgo.bean.Param;
 import pv.com.pvcloudgo.http.SpotsCallBack;
-import pv.com.pvcloudgo.msg.LoginRespMsg;
-import pv.com.pvcloudgo.utils.DESUtil;
+import pv.com.pvcloudgo.msg.LoadChargeMsg;
+import pv.com.pvcloudgo.utils.ToastUtils;
 
 /**
  * Created by stefan on 16/12/13.
@@ -45,7 +51,12 @@ public class PhoneChargeActivity extends BaseActivity {
     ImageView imageRight;
     @Bind(R.id.image_exit)
     ImageView imageExit;
+    @Bind(R.id.ac_p_c_phone_edt)
+    EditText mPhoneEdt;
+    @Bind(R.id.ac_c_p_recyclerview)
+    RecyclerView mRecyclerview;
 
+    private ChargeItemAdapter mChargeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +66,17 @@ public class PhoneChargeActivity extends BaseActivity {
 
 
         initToolBar();
+        init();
+        load();
+    }
+
+    private void init() {
+
+        mPhoneEdt.setText(App.getInstance().getUser().getTelPhone());
+
+
+
+
 
     }
 
@@ -78,44 +100,41 @@ public class PhoneChargeActivity extends BaseActivity {
         finish();
     }
 
-    public void login(View view) {
-
-
-        String phone = null;
-
-        String pwd = null;
-
-
-        Map<String, Object> params = new HashMap<>(2);
-        params.put("phone", phone);
-        params.put("password", DESUtil.encode(Contants.DES_KEY, pwd));
-
-        mHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
-
-
+    public void load() {
+        HashMap params = new Param();
+        mHttpHelper.get(Contants.API.TELCHONGZHI, params, new SpotsCallBack<LoadChargeMsg>(mContext) {
             @Override
-            public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
+            public void onSuccess(Response response, LoadChargeMsg resp) {
+                if (resp != null&&resp.getResults()!=null&&resp.getResults().getRuleList()!=null&&
+                        resp.getResults().getRuleList().size()!=0) {
+
+                    if (mChargeAdapter == null) {
+                        mChargeAdapter = new ChargeItemAdapter(mContext, resp.getResults().getRuleList());
+                        mChargeAdapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                ChargeRule rule = mChargeAdapter.getItem(position);
 
 
-                App application = App.getInstance();
-                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
+                            }
+                        });
 
-                if (application.getIntent() == null) {
-                    setResult(RESULT_OK);
-                    finish();
-                } else {
+                        mRecyclerview.setAdapter(mChargeAdapter);
 
-                    application.jumpToTargetActivity(mContext);
-                    finish();
-
-                }
-
+                        mRecyclerview.setLayoutManager(new GridLayoutManager(mContext, 3,GridLayoutManager.VERTICAL,false));
+                        mRecyclerview.setItemAnimator(new DefaultItemAnimator());
+//                    mRecyclerviewWares.addItemDecoration(new DividerGridItemDecoration(getContext()));
+                    } else {
+                        mChargeAdapter.clear();
+                        mChargeAdapter.addData(resp.getResults().getRuleList());
+                    }
+                }else ToastUtils.show("暂无数据");
 
             }
 
             @Override
             public void onError(Response response, int code, Exception e) {
-
+                ToastUtils.show("获取数据失败");
             }
 
             @Override
@@ -126,5 +145,4 @@ public class PhoneChargeActivity extends BaseActivity {
 
 
     }
-
 }

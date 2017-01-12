@@ -1,5 +1,7 @@
 package pv.com.pvcloudgo.http;
 
+import android.content.Context;
+
 import com.google.gson.internal.$Gson$Types;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -11,6 +13,7 @@ import java.lang.reflect.Type;
 
 public abstract class BaseCallback<T> {
 
+    public Context mContext;
 
     public Type mType;
 
@@ -24,7 +27,8 @@ public abstract class BaseCallback<T> {
     }
 
 
-    public BaseCallback() {
+    public BaseCallback(Context context) {
+        mContext=context;
         mType = getSuperclassTypeParameter(getClass());
     }
 
@@ -59,13 +63,14 @@ public abstract class BaseCallback<T> {
      * @param e
      */
     public abstract void onError(Response response, int code, Exception e);
+
     /**
      * 自定义服务器的异常信息回调
      *
      * @param response
      * @param code
      */
-    public abstract void onServerError(Response response, int code,  String errmsg);
+    public abstract void onServerError(Response response, int code, String errmsg);
 
     /**
      * Token 验证失败。状态码401,402,403 等时调用此方法

@@ -16,11 +16,9 @@ import pv.com.pvcloudgo.utils.ToastUtils;
  */
 public abstract class SimpleCallback<T> extends BaseCallback<T> {
 
-    protected Context mContext;
 
-    public SimpleCallback(Context context){
-
-        mContext = context;
+    public SimpleCallback(Context context) {
+        super(context);
 
     }
 

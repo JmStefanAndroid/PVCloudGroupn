@@ -13,11 +13,18 @@ import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.squareup.okhttp.Response;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.Bind;
+import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.R;
+import pv.com.pvcloudgo.bean.Param;
+import pv.com.pvcloudgo.http.SpotsCallBack;
+import pv.com.pvcloudgo.msg.GetTcMsg;
+import pv.com.pvcloudgo.utils.ToastUtils;
 
 /**
  * 套餐分类
@@ -51,6 +58,7 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
 
     @Override
     public void init() {
+        load("0");
         initTab();
     }
 
@@ -145,4 +153,34 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
         }
     }
 
+    /**
+     * 查询套餐分类
+     * @param ppId
+     */
+    public void load(String ppId) {
+        HashMap params = new Param();
+        params.put("ppId", ppId);
+//        params.put("canDingjin", "NO");
+//        params.put("pagerMethod", "number");
+        params.put("currentPage", 1);
+
+        mHttpHelper.get(Contants.API.LOAD_TC, params, new SpotsCallBack<GetTcMsg>(getActivity()) {
+            @Override
+            public void onSuccess(Response response, GetTcMsg o) {
+                System.out.println(o);
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+                ToastUtils.show("获取数据失败");
+            }
+
+            @Override
+            public void onServerError(Response response, int code, String errmsg) {
+
+            }
+        });
+
+
+    }
 }

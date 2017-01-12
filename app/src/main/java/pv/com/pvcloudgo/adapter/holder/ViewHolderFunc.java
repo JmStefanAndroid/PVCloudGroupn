@@ -19,6 +19,7 @@ import pv.com.pvcloudgo.ui.home.CloudTcActivity;
 import pv.com.pvcloudgo.ui.home.CloudWorldGoActivity;
 import pv.com.pvcloudgo.ui.home.OMYOActivity;
 import pv.com.pvcloudgo.ui.home.PhoneChargeActivity;
+import pv.com.pvcloudgo.utils.Utils;
 
 public class ViewHolderFunc extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -48,7 +49,9 @@ public class ViewHolderFunc extends RecyclerView.ViewHolder implements View.OnCl
             @Override
             public void onAnimationEnd(Animator animation) {
 
-
+                if (!Utils.login()) {
+                    return;
+                }
                 switch (v.getId()) {
 
                     case R.id.fun_all:
