@@ -182,7 +182,7 @@ public class CategoryFragment extends BaseFragment {
         HashMap<String, Object> params = new Param(2);
         params.put("ptId", ptId);
 
-        mHttpHelper.get(Contants.API.findByRoot,params, new SimpleCallback<CategoryRootResp>(getActivity()) {
+        mHttpHelper.get(Contants.API.findByRoot, params, new SimpleCallback<CategoryRootResp>(getActivity()) {
 
 
             @Override

@@ -39,6 +39,7 @@ public class Contants {
 
         public static final String LOGIN=BASE_URL +"app/userLogin";
         public static final String productTypeList=BASE_URL +"app/productTypeList";
+        public static final String loadType=BASE_URL +"/app/cache/ppt/val";
         public static final String LOGOUT=BASE_URL +"app/user/logout";
         public static final String GETCODE=BASE_URL +"app/registSendSMS";
         public static final String REG=BASE_URL +"app/userRegist";

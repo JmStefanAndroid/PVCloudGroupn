@@ -17,6 +17,7 @@ import com.squareup.okhttp.Response;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.Bind;
 import pv.com.pvcloudgo.Contants;
@@ -58,7 +59,7 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
 
     @Override
     public void init() {
-        load("0");
+        loadAllType();
         initTab();
     }
 
@@ -154,7 +155,7 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
     }
 
     /**
-     * 查询套餐分类
+     * 查询指定套餐分类
      * @param ppId
      */
     public void load(String ppId) {
@@ -180,6 +181,37 @@ public class TcTypeFragment extends BaseFragment implements OnTabSelectListener 
 
             }
         });
+
+
+    }
+    /**
+     * 查询指定套餐分类
+     */
+    public void loadAllType() {
+
+            Map<String, Object> params = new Param(1);
+            mHttpHelper.get(Contants.API.loadType, params, new SpotsCallBack<String>(getActivity()) {
+
+
+                @Override
+                public void onSuccess(Response response, String mCategoryResp) {
+                    if (mCategoryResp != null ) {
+                    }
+
+                }
+
+                @Override
+                public void onError(Response response, int code, Exception e) {
+
+                }
+
+                @Override
+                public void onServerError(Response response, int code, String errmsg) {
+
+                }
+            });
+
+
 
 
     }
