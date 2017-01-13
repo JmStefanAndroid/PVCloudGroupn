@@ -6,9 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/PVCloudGroupn.iml" filepath="$PROJECT_DIR$/PVCloudGroupn.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gloablelibrary/gloablelibrary.iml" filepath="$PROJECT_DIR$/gloablelibrary/gloablelibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/paysdk/paysdk.iml" filepath="$PROJECT_DIR$/paysdk/paysdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharesdk/sharesdk.iml" filepath="$PROJECT_DIR$/sharesdk/sharesdk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/smssdk/smssdk.iml" filepath="$PROJECT_DIR$/smssdk/smssdk.iml" />
     </modules>
   </component>
 </project>

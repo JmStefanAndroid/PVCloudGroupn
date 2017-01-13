@@ -155,8 +155,8 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
         toolbarTitle.setText(R.string.cart);
         toolbarRightTitle.setText("编辑");
         toolbarRightTitle.setOnClickListener(this);
-        toolbarLeftLogo.setVisibility(View.VISIBLE);
-        toolbarLeftLogo.setImageResource(R.drawable.ic_s_msg);
+//        toolbarLeftLogo.setVisibility(View.VISIBLE);
+//        toolbarLeftLogo.setImageResource(R.drawable.ic_s_msg);
 
     }
 

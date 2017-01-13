@@ -201,7 +201,7 @@ public class CloudCirFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+        if(mSliderLayout!=null)
         mSliderLayout.stopAutoCycle();
     }
 

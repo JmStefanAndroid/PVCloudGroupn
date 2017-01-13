@@ -1,1 +1,1 @@
-include ':app', ':sharesdk', ':smssdk', ':gloablelibrary', ':paysdk','FlycoTabLayout_Lib'
+include ':app', ':sharesdk',  ':gloablelibrary', 'FlycoTabLayout_Lib'
