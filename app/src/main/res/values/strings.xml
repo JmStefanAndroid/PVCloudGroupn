@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">PVGo</string>
+    <string name="app_name">GoGo</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
     <string name="home">主页</string>
-    <string name="hot">云会员店</string>
-    <string name="catagory">云商圈</string>
+    <string name="hot">会员店</string>
+    <string name="catagory">商圈</string>
     <string name="cart">购物车</string>
     <string name="mine">我的</string>
     <string name="title_activity_ware_detail">WareDetailActivity</string>
@@ -27,12 +27,12 @@
 
     <string name="now_phone">当前手机号码 %s</string>
     <string name="type_all">全部分类</string>
-    <string name="type_cloud_bondff">云套餐</string>
+    <string name="type_cloud_bondff">套餐</string>
     <string name="type_phone_charge">手机充值</string>
     <string name="type_cloud_earthgo">云+全球购</string>
     <string name="type_about_us">关于我们</string>
     <string name="type_cloud_club">云俱乐部</string>
-    <string name="type_omyomall">OMYO店</string>
+    <string name="type_omyomall">OMYO</string>
     <string name="type_cloud_servicep">云服务点</string>
     <string name="tit_pp_saling">品牌特卖</string>
     <string name="ic_vip_price">专享价</string>
