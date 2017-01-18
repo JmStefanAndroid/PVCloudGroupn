@@ -89,6 +89,7 @@
         android:layout_below="@+id/user_avater_container"
         flyco:tl_divider_width="32dp"
         flyco:tl_indicator_bounce_enable="true"
+        android:background="@color/white"
         flyco:tl_indicator_gradient_colors="@array/slider_colors"
         flyco:tl_tab_space_equal="true"
         flyco:tl_textSelectColor="@color/purple"

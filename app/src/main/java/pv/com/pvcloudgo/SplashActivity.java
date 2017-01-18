@@ -27,32 +27,29 @@ public class SplashActivity extends BaseActivity {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                runOnUiThread(new Runnable() {
+                runOnUiThread(() -> rootView.animate().scaleXBy(0.1f).scaleYBy(0.1f).alphaBy(0.1f).setDuration(1000).setListener(new Animator.AnimatorListener() {
                     @Override
-                    public void run() {
-                        rootView.animate().scaleXBy(0.1f).scaleYBy(0.1f).alphaBy(0.1f).setDuration(1000).setListener(new Animator.AnimatorListener() {
-                            @Override
-                            public void onAnimationStart(Animator animation) {
+                    public void onAnimationStart(Animator animation) {
 
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                startActivity(new Intent(mContext, MainActivity.class));
-                            }
-
-                            @Override
-                            public void onAnimationCancel(Animator animation) {
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animator animation) {
-
-                            }
-                        }).start();
                     }
-                });
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        startActivity(new Intent(mContext, MainActivity.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
+                    }
+                }).start());
 
             }
         }, 3000);

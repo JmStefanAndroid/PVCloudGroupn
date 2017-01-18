@@ -80,13 +80,6 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         pullScrollView.setZoomView(zoomView);
         pullScrollView.setScrollContentView(contentView);
         pullScrollView.setParallax(true);
-//        pullScrollView.setOnTurnListener(new PullScrollView.OnTurnListener() {
-//            @Override
-//            public void onTurn() {
-//
-//            }
-//        });
-//        pullScrollView.init(poster);
         initView();
         showUser();
     }
@@ -113,12 +106,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
         User user = App.getInstance().getUser();
         if (user == null) {
-//            mbtnLogout.setVisibility(View.GONE);
             mTxtUserName.setText(R.string.to_login);
         } else {
-//            mbtnLogout.setVisibility(View.VISIBLE);
-//            if (!TextUtils.isEmpty(user.getLogo_url()))
-//                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);
             mTxtUserName.setText(user.getNicheng());
 
             loadMineData();
