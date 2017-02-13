@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pv.com.pvcloudgo.app.App;
 import pv.com.pvcloudgo.bean.Param;
+import pv.com.pvcloudgo.bean.User;
 import pv.com.pvcloudgo.http.SpotsCallBack;
 import pv.com.pvcloudgo.msg.BaseRespMsg;
 import pv.com.pvcloudgo.msg.LoginResp;
@@ -62,18 +63,8 @@ public class LoginActivity extends BaseActivity {
 
         initToolBar();
 
-        txtToReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RegActivity.class));
-            }
-        });
-        findPassTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, FindPassActivity.class));
-            }
-        });
+        txtToReg.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegActivity.class)));
+        findPassTv.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, FindPassActivity.class)));
     }
 
 
@@ -93,6 +84,22 @@ public class LoginActivity extends BaseActivity {
         finish();
     }
 
+
+    public void testlogin() {
+        App application = App.getInstance();
+        String token = "testtest";
+        User user = new User();
+        application.putUser(user, token);
+        setResult(RESULT_OK);
+        finish();
+    }
+
+    /**
+     * TODO
+     * 测试登录，目前服务器不可用了，可以更改为自己的服务器地址进行测试
+     *
+     * @param view
+     */
     @OnClick(R.id.btn_login)
     public void login(View view) {
 
@@ -126,14 +133,6 @@ public class LoginActivity extends BaseActivity {
                     application.putUser(userLoginRespMsg.getResults().getMyUser(), userLoginRespMsg.getResults().getToken());
                     setResult(RESULT_OK);
                     finish();
-//                    if (application.getIntent() == null) {
-//                        setResult(RESULT_OK);
-//                        finish();
-//                    } else {
-//                        application.jumpToTargetActivity(LoginActivity.this);
-//                        finish();
-//
-//                    }
                 } else {
                     showNormalErr(userLoginRespMsg);
                 }
@@ -143,8 +142,8 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onError(Response response, int code, Exception e) {
-                showFail();
-
+//                showFail();
+                testlogin();
             }
 
             @Override

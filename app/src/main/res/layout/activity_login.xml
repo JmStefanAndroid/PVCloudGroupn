@@ -44,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="11"
+                android:text="test"
                 android:hint="手机号/云购账号"
                 android:inputType="phone"
                 android:paddingLeft="40dp" />
@@ -70,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="请输入密码"
+                android:text="test"
                 android:inputType="textPassword"
                 android:paddingLeft="40dp" />
         </LinearLayout>

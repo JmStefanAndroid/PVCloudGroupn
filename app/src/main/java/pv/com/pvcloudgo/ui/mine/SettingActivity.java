@@ -8,21 +8,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.squareup.okhttp.Response;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pv.com.pvcloudgo.BaseActivity;
-import pv.com.pvcloudgo.Contants;
 import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.bean.User;
-import pv.com.pvcloudgo.http.SpotsCallBack;
-import pv.com.pvcloudgo.msg.BaseRespMsg;
-import pv.com.pvcloudgo.msg.LoginRespMsg;
 import pv.com.pvcloudgo.utils.ToastUtils;
 
 
@@ -52,7 +42,6 @@ public class SettingActivity extends BaseActivity {
     }
 
 
-
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
@@ -70,42 +59,50 @@ public class SettingActivity extends BaseActivity {
     }
 
     public void logout(View view) {
+/**
+ *
+ * TODO 服务器已关闭，退出改为本地退出方式
+ */
+        App application = App.getInstance();
+        application.clearUser();
+        finish();
+        System.exit(0);
+        ToastUtils.show("注销成功！");
 
-
-        Map<String, Object> params = new HashMap<>(2);
-        params.put("token", App.getInstance().getToken());
-
-        mHttpHelper.post(Contants.API.LOGOUT, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
-
-
-            @Override
-            public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
-                if (userLoginRespMsg != null && userLoginRespMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
-                    App application = App.getInstance();
-                    application.clearUser();
-                    finish();
-                    System.exit(0);
-                    ToastUtils.show("注销成功！");
-                }else{
-                    ToastUtils.show("注销失败！");
-                }
-
-                }
-
-                @Override
-                public void onError (Response response,int code, Exception e){
-
-                }
-
-                @Override
-                public void onServerError (Response response,int code, String errmsg){
-
-                }
-            }
-
-            );
-
-
+//        Map<String, Object> params = new HashMap<>(2);
+//        params.put("token", App.getInstance().getToken());
+//
+//        mHttpHelper.post(Contants.API.LOGOUT, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
+//
+//
+//            @Override
+//            public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
+//                if (userLoginRespMsg != null && userLoginRespMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
+//                    App application = App.getInstance();
+//                    application.clearUser();
+//                    finish();
+//                    System.exit(0);
+//                    ToastUtils.show("注销成功！");
+//                }else{
+//                    ToastUtils.show("注销失败！");
+//                }
+//
+//                }
+//
+//                @Override
+//                public void onError (Response response,int code, Exception e){
+//
+//                }
+//
+//                @Override
+//                public void onServerError (Response response,int code, String errmsg){
+//
+//                }
+//            }
+//
+//            );
+//
+//
         }
 
     }

@@ -5,3 +5,16 @@
 .DS_Store
 /build
 /captures
+gloablelibrary/gloablelibrary.iml
+FlycoTabLayout_Lib/FlycoTabLayout_Lib.iml
+*.iml
+.idea/runConfigurations.xml
+.idea/misc.xml
+.idea/gradle.xml
+.idea/copyright/profiles_settings.xml
+.idea/compiler.xml
+app/app.iml
+app/app.iml
+.idea/modules.xml
+sharesdk/sharesdk.iml
+*.iml

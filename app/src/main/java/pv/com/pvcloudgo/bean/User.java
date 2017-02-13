@@ -9,12 +9,10 @@ public class User implements Serializable {
 
     private Long id;
     private String logo_url;
-    private String username;
     private String mobi;
-
+    String account;
     String wxId;
     String bianhan;
-    String name;
     String nicheng, password, telPhone, email, touxiang, touxiangMin, qq, weibo, addressTreeIds, selfInfo, status, vo_sex;
     String zhiye, aihao, jiatingzhuzhi, vo_gradeName, salt, laiyuan;
     int addressId, sex, age, shopId, vckDataId;//普通-0，商家-！0
@@ -45,13 +43,6 @@ public class User implements Serializable {
         this.logo_url = logo_url;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getMobi() {
         return mobi;
@@ -67,10 +58,6 @@ public class User implements Serializable {
 
     public String getBianhan() {
         return bianhan;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getNicheng() {
@@ -165,16 +152,34 @@ public class User implements Serializable {
         return zhuceDate;
     }
 
+    public void setNicheng(String nicheng) {
+        this.nicheng = nicheng;
+    }
+
+    public void setTelPhone(String telPhone) {
+        this.telPhone = telPhone;
+    }
+
+    public User() {
+        this.sex = 1;
+        this.zhuceDate = "2017.2.13";
+        this.jiatingzhuzhi = "中国.成都";
+        this.zhiye = "Android development";
+        this.status = "OK";
+        this.nicheng = "JmStefanAndroid";
+        this.telPhone = "183********";
+        this.password = "test";
+        this.account = "test";
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", logo_url='" + logo_url + '\'' +
-                ", username='" + username + '\'' +
                 ", mobi='" + mobi + '\'' +
                 ", wxId='" + wxId + '\'' +
                 ", bianhan='" + bianhan + '\'' +
-                ", name='" + name + '\'' +
                 ", nicheng='" + nicheng + '\'' +
                 ", password='" + password + '\'' +
                 ", telPhone='" + telPhone + '\'' +

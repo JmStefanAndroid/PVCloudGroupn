@@ -144,6 +144,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void showFail() {
+
         if (Looper.myLooper() != Looper.getMainLooper()){
             runOnUiThread(new Runnable() {
                 @Override

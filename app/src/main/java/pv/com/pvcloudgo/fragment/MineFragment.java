@@ -25,6 +25,7 @@ import pv.com.pvcloudgo.http.SpotsCallBack;
 import pv.com.pvcloudgo.msg.BaseRespMsg;
 import pv.com.pvcloudgo.msg.MineMsg;
 import pv.com.pvcloudgo.ui.mine.OrderActivity;
+import pv.com.pvcloudgo.ui.mine.PersonalInfoActivity;
 import pv.com.pvcloudgo.ui.mine.SettingActivity;
 import pv.com.pvcloudgo.utils.ToastUtils;
 import pv.com.pvcloudgo.utils.Utils;
@@ -92,11 +93,14 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             case R.id.mine_fun_payback:
             case R.id.mine_fun_wait_pay:
             case R.id.mine_fun_wait_receive:
-                startActivity(new Intent(getActivity(), OrderActivity.class));
+                next(OrderActivity.class);
+                break;
+            case R.id.mine_tt_settings_iv:
+                next(SettingActivity.class);
                 break;
             case R.id.txt_username:
             case R.id.img_head:
-                toLoginActivity(view);
+                next(PersonalInfoActivity.class);
                 break;
         }
     }
@@ -116,10 +120,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     }
 
 
-    public void toLoginActivity(View view) {
+    public void next(Class cls) {
 
 
-        Intent intent = new Intent(getActivity(), SettingActivity.class);
+        Intent intent = new Intent(getActivity(), cls);
 
         startActivityForResult(intent, true, Contants.REQUEST_CODE);
 
@@ -167,6 +171,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         mineFunEvaluate.setOnClickListener(this);
         mTxtUserName.setOnClickListener(this);
         imgHead.setOnClickListener(this);
+        pullScrollView.getPullRootView().findViewById(R.id.mine_tt_settings_iv).setOnClickListener(this);
     }
 
     @Override
@@ -185,13 +190,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void onSuccess(Response response, MineMsg respMsg) {
                 if (respMsg != null && respMsg.getStatus().equals(BaseRespMsg.STATUS_SUCCESS)) {
-                    MineMsg.Result result=respMsg.getResult();
-                    Utils.bindStrText(attenCountTv,result.getSccount()+"");
-                    Utils.bindStrText(fansTv,result.getAllFensiCount()+"");
-                    Utils.bindStrText(salecardTv,result.getYhqwaituse()+"");
-                    Utils.bindStrText(bankNoTv,result.getBrankcount()+"");
-                    Utils.bindStrText(availableMoneyTv,result.getAccount().getAvailablePrice()+"");
-                    Utils.bindStrText(frozenMoneyTv,result.getAccount().getFrozenPrice()+"");
+                    MineMsg.Result result = respMsg.getResult();
+                    Utils.bindStrText(attenCountTv, result.getSccount() + "");
+                    Utils.bindStrText(fansTv, result.getAllFensiCount() + "");
+                    Utils.bindStrText(salecardTv, result.getYhqwaituse() + "");
+                    Utils.bindStrText(bankNoTv, result.getBrankcount() + "");
+                    Utils.bindStrText(availableMoneyTv, result.getAccount().getAvailablePrice() + "");
+                    Utils.bindStrText(frozenMoneyTv, result.getAccount().getFrozenPrice() + "");
                 } else {
                     showNormalErr(respMsg);
                 }
