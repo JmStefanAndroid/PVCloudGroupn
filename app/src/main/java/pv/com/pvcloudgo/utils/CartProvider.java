@@ -8,13 +8,9 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
-import pv.com.pvcloudgo.bean.ShoppingCart;
-import pv.com.pvcloudgo.bean.Wares;
+import pv.com.pvcloudgo.model.bean.ShoppingCart;
+import pv.com.pvcloudgo.model.bean.Wares;
 
-/**
- * Created by <a href="http://www.cniao5.com">菜鸟窝</a>
- * 一个专业的Android开发在线教育平台
- */
 public class CartProvider {
 
 

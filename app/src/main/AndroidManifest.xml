@@ -28,7 +28,6 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_SMS" />
 
-    <!-- <uses-sdk tools:overrideLibrary="com.cniao5.paysdk,com.cniao5.baidupaysdk"/> -->
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -36,7 +35,7 @@
         android:label="@string/app_name"
         android:theme="@style/CustomAppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".vc.view.ui.activity.start.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,27 +44,22 @@
             </intent-filter>
         </activity>
 
-        <!-- <activity android:name=".TestActvity"></activity> -->
-        <activity android:name=".WareListActivity" />
+        <activity android:name=".vc.view.ui.activity.other.WareListActivity" />
         <activity
-            android:name=".WareDetailActivity"
+            android:name=".vc.view.ui.activity.other.WareDetailActivity"
             android:exported="true"
             android:label="@string/title_activity_ware_detail" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".vc.view.ui.activity.start.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".vc.view.ui.activity.main.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".FindPassActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".BandPhoneActivity"
+            android:name=".vc.view.ui.activity.start.FindPassActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
@@ -83,14 +77,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateOrderActivity" />
-        <activity android:name=".PayResultActivity" />
+        <activity android:name=".vc.view.ui.activity.order.CreateOrderActivity" />
+        <activity android:name=".vc.view.ui.activity.other.PayResultActivity" />
         <activity
-            android:name=".RegActivity"
+            android:name=".vc.view.ui.activity.start.RegActivity"
             android:label="@string/title_activity_reg" />
-        <activity android:name=".RegSecondActivity" />
-        <activity android:name=".AddressListActivity" />
-        <activity android:name=".AddressAddActivity" />
+        <activity android:name=".vc.view.ui.activity.addr.AddressListActivity" />
+        <activity android:name=".vc.view.ui.activity.addr.AddressAddActivity" />
 
         <meta-data
             android:name="mob_sms_appKey"
@@ -99,9 +92,9 @@
             android:name="mob_sms_appSecrect"
             android:value="e73deba501fb3faaa1b5c2729e3eedbe" />
 
-        <activity android:name=".MyOrderActivity" />
-        <activity android:name=".ui.mine.OrderDetailActivity" />
-        <activity android:name=".MyFavoriteActivity" />
+        <activity android:name=".vc.view.ui.activity.order.MyOrderActivity" />
+        <activity android:name=".vc.view.ui.activity.mine.OrderDetailActivity" />
+        <activity android:name=".vc.view.ui.activity.other.MyFavoriteActivity" />
 
         <!-- above activity that demo required,has nothing to with umeng sdk -->
         <!-- *************************    related to Share START **************************** -->
@@ -174,24 +167,20 @@
             android:name="UMENG_CHANNEL"
             android:value="Umeng" />
 
-        <service
-            android:name="com.sina.weibo.sdk.net.DownloadService"
-            android:exported="false" />
-
-        <activity android:name=".CategoryActivity" />
-        <activity android:name=".ui.home.CloudTcActivity"></activity>
-        <activity android:name=".ui.home.PhoneChargeActivity"></activity>
-        <activity android:name=".ui.home.PhoneChargeRecordActivity"></activity>
-        <activity android:name=".ui.home.CloudWorldGoActivity"></activity>
-        <activity android:name=".ui.home.CloudPointActivity"></activity>
-        <activity android:name=".ui.home.CloudPointApplyActivity"></activity>
-        <activity android:name=".ui.home.OMYOActivity" android:windowSoftInputMode="stateAlwaysHidden"></activity>
-        <activity android:name=".ui.home.CloudClubActivity"></activity>
-        <activity android:name=".ui.home.AboutUsActivity"></activity>
-        <activity android:name=".ui.vip.ShopActivity"></activity>
-        <activity android:name=".ui.mine.SettingActivity"></activity>
-        <activity android:name=".ui.mine.OrderActivity"></activity>
-        <activity android:name=".ui.mine.PersonalInfoActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.other.CategoryActivity" />
+        <activity android:name=".vc.view.ui.activity.home.CloudTcActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.PhoneChargeActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.PhoneChargeRecordActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.CloudWorldGoActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.CloudPointActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.CloudPointApplyActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.OMYOActivity" android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity android:name=".vc.view.ui.activity.home.CloudClubActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.home.AboutUsActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.vip.ShopActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.mine.SettingActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.mine.OrderActivity"></activity>
+        <activity android:name=".vc.view.ui.activity.mine.PersonalInfoActivity"></activity>
     </application>
 
 </manifest>

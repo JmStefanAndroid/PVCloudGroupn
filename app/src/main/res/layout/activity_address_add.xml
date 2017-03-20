@@ -7,7 +7,7 @@
     android:background="@color/bg_color"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <pv.com.pvcloudgo.widget.PVToolBar
+    <pv.com.pvcloudgo.vc.widget.PVToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             <View
                 style="@style/line_horizontal"/>
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_consignee"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             <View
                 style="@style/line_horizontal"/>
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_phone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -183,7 +183,7 @@
             <View
                 style="@style/line_horizontal"/>
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_add"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

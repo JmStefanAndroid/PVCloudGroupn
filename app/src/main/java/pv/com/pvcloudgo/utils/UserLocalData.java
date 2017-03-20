@@ -3,8 +3,7 @@ package pv.com.pvcloudgo.utils;
 import android.content.Context;
 import android.text.TextUtils;
 
-import pv.com.pvcloudgo.Contants;
-import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.model.bean.User;
 
 public class UserLocalData {
 

@@ -17,7 +17,7 @@
         android:padding="@dimen/middlePadding">
 
 
-        <pv.com.pvcloudgo.widget.ClearEditText
+        <pv.com.pvcloudgo.vc.widget.ClearEditText
             android:id="@+id/edittxt_phone"
             style="@style/editText_base"
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:paddingBottom="@dimen/smallPadding"
             android:paddingTop="@dimen/smallPadding">
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_code"
                 style="@style/editText_base"
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:paddingTop="@dimen/smallPadding">
 
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_pwd"
                 style="@style/editText_base"
                 android:layout_width="0dp"

@@ -8,7 +8,7 @@
 
     android:background="@color/bg_color">
 
-    <pv.com.pvcloudgo.widget.PVToolBar
+    <pv.com.pvcloudgo.vc.widget.PVToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

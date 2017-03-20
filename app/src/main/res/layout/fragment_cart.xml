@@ -17,7 +17,7 @@
         android:layout_below="@id/toolbar"
         android:layout_marginBottom="50dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="pv.com.pvcloudgo.fragment.CartFragment"
+        tools:context="pv.com.pvcloudgo.vc.view.ui.fragment.CartFragment"
         tools:listitem="@layout/fragment_shop_item"/>
 
 

@@ -7,7 +7,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.LoginActivity;
+import pv.com.pvcloudgo.vc.view.ui.activity.start.LoginActivity;
 import pv.com.pvcloudgo.R;
 import pv.com.pvcloudgo.utils.ToastUtils;
 

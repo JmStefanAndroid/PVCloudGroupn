@@ -9,13 +9,13 @@
 
 
 
-    <pv.com.pvcloudgo.widget.pulldownview.PullToZoomScrollViewEx
+    <pv.com.pvcloudgo.vc.widget.pulldownview.PullToZoomScrollViewEx
         android:id="@+id/pull_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-    </pv.com.pvcloudgo.widget.pulldownview.PullToZoomScrollViewEx>
+    </pv.com.pvcloudgo.vc.widget.pulldownview.PullToZoomScrollViewEx>
 
 
 </LinearLayout>

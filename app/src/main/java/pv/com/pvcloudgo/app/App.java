@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.model.bean.User;
 import pv.com.pvcloudgo.dagger.AppComponent;
 import pv.com.pvcloudgo.dagger.DaggerAppComponent;
 import pv.com.pvcloudgo.utils.ToastUtils;

@@ -5,7 +5,7 @@
     android:background="@color/bg_color"
     android:orientation="vertical">
 
-    <pv.com.pvcloudgo.widget.StretchScrollView
+    <pv.com.pvcloudgo.vc.widget.StretchScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -370,5 +370,5 @@
             </LinearLayout>
 
         </LinearLayout>
-    </pv.com.pvcloudgo.widget.StretchScrollView>
+    </pv.com.pvcloudgo.vc.widget.StretchScrollView>
 </LinearLayout>

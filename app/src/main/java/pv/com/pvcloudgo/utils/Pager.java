@@ -16,7 +16,7 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.bean.Page;
+import pv.com.pvcloudgo.model.bean.Page;
 import pv.com.pvcloudgo.http.OkHttpHelper;
 import pv.com.pvcloudgo.http.SpotsCallBack;
 

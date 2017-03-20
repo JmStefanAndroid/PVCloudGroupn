@@ -18,7 +18,7 @@
         android:padding="@dimen/middlePadding">
 
 
-        <pv.com.pvcloudgo.widget.ClearEditText
+        <pv.com.pvcloudgo.vc.widget.ClearEditText
             android:id="@+id/edittxt_phone"
             style="@style/editText_base"
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                 android:paddingBottom="@dimen/smallPadding"
                 android:paddingTop="@dimen/smallPadding">
 
-                <pv.com.pvcloudgo.widget.ClearEditText
+                <pv.com.pvcloudgo.vc.widget.ClearEditText
                     android:id="@+id/edittxt_code"
                     style="@style/editText_base"
                     android:layout_width="match_parent"
@@ -91,7 +91,7 @@
                 android:text="请设置密码并妥善保管"
                 android:textColor="@color/grey" />
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_pswd1"
                 style="@style/editText_base"
                 android:layout_width="match_parent"
@@ -105,7 +105,7 @@
 
             <View style="@style/line_vertical" />
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/edittxt_pswd2"
                 style="@style/editText_base"
                 android:layout_width="match_parent"

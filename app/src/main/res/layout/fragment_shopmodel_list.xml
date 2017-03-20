@@ -69,7 +69,7 @@
         android:layout_marginTop="-44dp"
         android:layout_marginRight="@dimen/smallerPadding"
         app:layoutManager="LinearLayoutManager"
-        tools:context="pv.com.pvcloudgo.fragment.VipFragment"
+        tools:context="pv.com.pvcloudgo.vc.view.ui.fragment.VipFragment"
         tools:listitem="@layout/fragment_vip" />
 
 </RelativeLayout>

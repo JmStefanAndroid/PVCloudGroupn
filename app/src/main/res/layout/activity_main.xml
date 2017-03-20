@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
+    tools:context=".vc.view.ui.activity.main.MainActivity"
     android:orientation="vertical">
 
 
@@ -19,7 +19,7 @@
         />
 
 
-    <pv.com.pvcloudgo.widget.FragmentTabHost
+    <pv.com.pvcloudgo.vc.widget.FragmentTabHost
         android:id="@android:id/tabhost"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="0" />
-    </pv.com.pvcloudgo.widget.FragmentTabHost>
+    </pv.com.pvcloudgo.vc.widget.FragmentTabHost>
 
 
 

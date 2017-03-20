@@ -38,7 +38,7 @@
                 android:textColor="@color/dimgrey"
                 android:textSize="14sp" />
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/etxt_phone"
                 style="@style/editText_base"
                 android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:textColor="@color/dimgrey"
                 android:textSize="14sp" />
 
-            <pv.com.pvcloudgo.widget.ClearEditText
+            <pv.com.pvcloudgo.vc.widget.ClearEditText
                 android:id="@+id/etxt_pwd"
                 style="@style/editText_base"
                 android:layout_width="match_parent"

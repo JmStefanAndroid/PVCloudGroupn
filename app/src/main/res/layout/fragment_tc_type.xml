@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/bg_color"
     android:layout_height="match_parent"
-    tools:context="pv.com.pvcloudgo.fragment.TcTypeFragment">
+    tools:context="pv.com.pvcloudgo.vc.view.ui.fragment.TcTypeFragment">
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/sliding_tab_layout"

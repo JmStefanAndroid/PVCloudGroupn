@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context="pv.com.pvcloudgo.WareDetailActivity">
+    tools:context="pv.com.pvcloudgo.vc.view.ui.activity.other.WareDetailActivity">
 
 
-    <pv.com.pvcloudgo.widget.PVToolBar
+    <pv.com.pvcloudgo.vc.widget.PVToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:contentInsetEnd="56dp"
         app:title="商品详情">
 
-    </pv.com.pvcloudgo.widget.PVToolBar>
+    </pv.com.pvcloudgo.vc.widget.PVToolBar>
 
 
 

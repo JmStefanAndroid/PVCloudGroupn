@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="pv.com.pvcloudgo.NewOrderActivity">
+    tools:context="pv.com.pvcloudgo.vc.view.ui.activity.order.NewOrderActivity">
 
     <TextView android:text="提交订单"
         android:textColor="@color/black"

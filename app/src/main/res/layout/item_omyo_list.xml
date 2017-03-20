@@ -87,7 +87,7 @@
             android:layout_below="@+id/item_up"
             android:orientation="horizontal">
 
-            <pv.com.pvcloudgo.widget.SquareRelativeLayout
+            <pv.com.pvcloudgo.vc.widget.SquareRelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -99,7 +99,7 @@
                     android:layout_marginTop="@dimen/middlePadding"
                     android:scaleType="centerCrop"
                     android:src="@drawable/pp_shoes" />
-            </pv.com.pvcloudgo.widget.SquareRelativeLayout>
+            </pv.com.pvcloudgo.vc.widget.SquareRelativeLayout>
 
             <LinearLayout
                 android:layout_width="100dp"

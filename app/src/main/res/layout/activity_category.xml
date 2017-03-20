@@ -11,7 +11,7 @@
         layout="@layout/toolbar" />
 
     <fragment
-        android:name="pv.com.pvcloudgo.fragment.CategoryFragment"
+        android:name="pv.com.pvcloudgo.vc.view.ui.fragment.CategoryFragment"
         android:layout_width="match_parent"
         android:id="@+id/fragment_category"
         android:layout_height="match_parent" />

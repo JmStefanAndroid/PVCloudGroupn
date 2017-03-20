@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-    <pv.com.pvcloudgo.widget.StretchScrollView
+    <pv.com.pvcloudgo.vc.widget.StretchScrollView
         android:layout_width="match_parent"
         android:layout_below="@+id/toolbar"
         android:layout_height="match_parent">
@@ -319,7 +319,7 @@
                     android:layout_marginTop="@dimen/middlePadding" />
             </RelativeLayout>
         </LinearLayout>
-    </pv.com.pvcloudgo.widget.StretchScrollView>
+    </pv.com.pvcloudgo.vc.widget.StretchScrollView>
 
     <ImageView
         android:id="@+id/expanded_image"

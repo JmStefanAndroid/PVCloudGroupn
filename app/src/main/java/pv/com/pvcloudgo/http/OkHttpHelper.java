@@ -19,10 +19,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import pv.com.pvcloudgo.Contants;
-import pv.com.pvcloudgo.LoginActivity;
+import pv.com.pvcloudgo.utils.Contants;
+import pv.com.pvcloudgo.vc.view.ui.activity.start.LoginActivity;
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.msg.BaseRespMsg;
+import pv.com.pvcloudgo.model.base.BaseRespMsg;
 import pv.com.pvcloudgo.utils.ActivityManager;
 import pv.com.pvcloudgo.utils.ToastUtils;
 

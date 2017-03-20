@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
-import pv.com.pvcloudgo.LoginActivity;
+import pv.com.pvcloudgo.vc.view.ui.activity.start.LoginActivity;
 import pv.com.pvcloudgo.app.App;
-import pv.com.pvcloudgo.bean.User;
+import pv.com.pvcloudgo.model.bean.User;
 
 public class Utils {
 

@@ -6,10 +6,10 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bg_color"
-    tools:context="pv.com.pvcloudgo.MyFavoriteActivity">
+    tools:context="pv.com.pvcloudgo.vc.view.ui.activity.other.MyFavoriteActivity">
 
 
-    <pv.com.pvcloudgo.widget.PVToolBar
+    <pv.com.pvcloudgo.vc.widget.PVToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

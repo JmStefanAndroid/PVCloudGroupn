@@ -61,7 +61,7 @@
                 android:layout_gravity="right"
                 />
 
-           <pv.com.pvcloudgo.widget.NumberAddSubView
+           <pv.com.pvcloudgo.vc.widget.NumberAddSubView
                android:id="@+id/num_control"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"

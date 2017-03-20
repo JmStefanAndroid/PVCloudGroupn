@@ -13,7 +13,7 @@
         android:layout_marginLeft="@dimen/smallerPadding"
         android:layout_marginRight="@dimen/smallerPadding"
         app:layoutManager="LinearLayoutManager"
-        tools:context="pv.com.pvcloudgo.fragment.VipFragment"
+        tools:context="pv.com.pvcloudgo.vc.view.ui.fragment.VipFragment"
         tools:listitem="@layout/item_omyo_list" />
 
 </LinearLayout>

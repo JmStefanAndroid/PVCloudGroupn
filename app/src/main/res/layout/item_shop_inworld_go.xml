@@ -10,7 +10,7 @@
     android:orientation="vertical"
     tools:showIn="@layout/activity_cloudworld_go">
 
-    <pv.com.pvcloudgo.widget.SquareRelativeLayout
+    <pv.com.pvcloudgo.vc.widget.SquareRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,7 +24,7 @@
             fresco:fadeDuration="300"
             fresco:overlayImage="@drawable/pp_shoes"
             fresco:placeholderImageScaleType="centerCrop" />
-    </pv.com.pvcloudgo.widget.SquareRelativeLayout>
+    </pv.com.pvcloudgo.vc.widget.SquareRelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
