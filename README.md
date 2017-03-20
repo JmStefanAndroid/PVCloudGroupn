@@ -27,8 +27,8 @@ An online shopping mall(在线商城，持续迭代中..)
 
 
 </p>
-![这里写图片描述](http://img.blog.csdn.net/20170112104552267?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
+<img width="origin" height="origin" src="http://img.blog.csdn.net/20170112104552267?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"/>
 
 ### [APK下载](https://github.com/JmStefanAndroid/PVCloudGroupn/tree/master/apk/Gogo.apk?raw=true)  
 
