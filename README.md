@@ -1,5 +1,5 @@
 # PVCloudGroupn
-An online shopping mall(在线商城，持续迭代中..)
+An online shopping mall(在线商城，仅做参考)
 
 #近期问题说明
 目前服务器已经关闭，因此我已将里面的登录、注销改为本地模式，不影响你的使用哦，前面使用过的小伙伴也请update到这个版本
